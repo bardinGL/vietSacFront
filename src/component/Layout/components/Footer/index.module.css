@@ -1,5 +1,3 @@
-@import url('../../../GlobalStyles/index.css');
-
 .wrapper {
     background-image: url(/public/img/footerBackground.jpg);
     width: 100%;
@@ -25,16 +23,11 @@
 
 .footer-input {
     width: 750px;
-    padding: 25px 30px;
+    padding: 16px 30px;
     color: #F3CD6A;
+    font-size: 28px;
     background-color: transparent;
     border: 1px solid #F3CD6A;
-}
-
-.footer-input::placeholder {
-    color: #F3CD6A;
-    font-weight: 300;
-    font-size: 28px;
 }
 
 .footer-input::placeholder {

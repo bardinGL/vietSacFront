@@ -1,0 +1,19 @@
+.wrapper {
+    padding: 29px 57px;
+    height: 120px;
+    background-color: #264234;
+}
+
+.header-logo-text {
+    color: #FFD367;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.user-title {
+    color: #EFDBCACC;
+    font-weight: 500;
+    text-transform: capitalize;
+}

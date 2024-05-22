@@ -32,6 +32,11 @@
     src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.ttf"),
          url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.woff");
 }
+@font-face {
+    font-family: thin-font;
+    src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.ttf"),
+         url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.woff");
+}
 
 /*---Headline---*/
 h1, h2, h3, h4, h5, h6 {
@@ -47,7 +52,7 @@ a {
     font-family: regular-font !important;
 }
 
-label {
+label, p {
     font-family: regular-font !important;
 }
 
