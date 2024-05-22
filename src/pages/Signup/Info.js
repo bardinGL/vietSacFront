@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Formik } from "formik";
 import { Button, InputNumber } from "antd";
-import { FormItem, Input, Select } from "formik-antd";
+import { Input, Select } from "formik-antd";
 import MultiStepFormContext from "./MultiStepFormContext";
 
 import classNames from 'classnames/bind';
@@ -15,7 +15,7 @@ const Info = () => {
   const genderOptions = [
     { value: "male", text: "Nam" },
     { value: "female", text: "Nữ" },
-    { value: "diff", text: "Khác" }
+    { value: "another", text: "Khác" }
   ];
 
   const { info, setInfo, next, prev } = useContext(MultiStepFormContext);
@@ -23,6 +23,7 @@ const Info = () => {
     <Formik
       initialValues={info}
       onSubmit={(values) => {
+        values.gender = document.querySelector('select[name="gender"]').value;
         setInfo(values);
         next();
       }}
@@ -65,30 +66,19 @@ const Info = () => {
                                   <p className={cx('error-feedback')}>{errors.email}</p>
                               </div>
                           </div>
-                          <div className='row mb-5'>
-                          <FormItem
-                            className={cx('input-title')}
-                            name="originalSelect"
-                            label="Chọn giới tính"
-                          >
-                            <Select
-                            style={{width: 495,
-                              color: "#264234",
-                              borderBottom: "2px solid rgba(38, 66, 52, 0.50)"}}
+                          <div className='row mb-3 mt-3'>
+                            <label className={cx('input-title')}>Giới tính</label>
+                            <select
+                            className={`${cx('input-gender')}`}
                               name="gender"
-                              allowClear
-                              placeholder="Select something"
+                              placeholder="Chọn giới tính"
                             >
                               {genderOptions.map((gender) => 
-                                (<Select.Option 
-                                  style={{width: 495,
-                                    padding: "10 10 10 18",
-                                    color: "#264234",
-                                    fontSize: 20}}
-                                 value={gender.value}>{gender.text}</Select.Option>))}
+                                (<option 
+                                  className={`${cx('input-gender')}`}
+                                 value={gender.value}>{gender.text}</option>))}
                               
-                            </Select>
-                          </FormItem>
+                            </select>
                           </div>
                         </div>
                         <div>
