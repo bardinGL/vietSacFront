@@ -1,0 +1,55 @@
+@import url('../../../GlobalStyles/index.css');
+
+.wrapper {
+    background-image: url(/public/img/footerBackground.jpg);
+    width: 100%;
+    height: 850px;
+}
+
+
+.section-connect {
+    background-image: url(/public/img/footerImg.jpg);
+    min-width: 1350px;
+    min-height: 460px;
+    border-radius: 10px;
+
+    background-color: #000000;
+}
+
+.footer-title {
+    color:#FFD467;
+    font-size: 85.208px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.footer-input {
+    width: 750px;
+    padding: 25px 30px;
+    color: #F3CD6A;
+    background-color: transparent;
+    border: 1px solid #F3CD6A;
+}
+
+.footer-input::placeholder {
+    color: #F3CD6A;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.footer-input::placeholder {
+    color: #F3CD6A;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.footer-btn {
+    color: #961C24;
+    height: 100%;
+    padding: 8px 62px;
+    margin-left: 5px;
+    background-color: #FFD069;
+    border: none;
+    font-size: 40px;
+    font-family: thin-font;
+}
