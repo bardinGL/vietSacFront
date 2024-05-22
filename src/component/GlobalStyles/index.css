@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+/*--Typography--*/
+/*---------Font family---------*/
+@font-face {
+    font-family: display-font;
+    src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Black.ttf"),
+         url("../../assets/fonts/blacker-sans-text/BlackerSansText-Black.woff");       
+}
+@font-face {
+    font-family: bold-font;
+    src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Bold.ttf"),
+         url("../../assets/fonts/blacker-sans-text/BlackerSansText-Bold.woff");
+}   
+/* @font-face {
+    font-family: semibold-font;
+    src: url("../../public/fonts/SF-Pro-Text-Semibold.ttf"),
+         url("../../public/fonts/SF-Pro-Text-Semibold.woff");
+} */
+@font-face {
+    font-family: medium-font;
+    src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Medium.ttf"),
+         url("../../assets/fonts/blacker-sans-text/BlackerSansText-Medium.woff");
+}
+@font-face {
+    font-family: regular-font;
+    src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Book.ttf"),
+         url("../../assets/fonts/blacker-sans-text/BlackerSansText-Book.woff");
+}
+
+/*---Headline---*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: bold-font !important;
+}
+
+button {
+    font-family: medium-font !important;
+    text-align: center;
+}
+
+a {
+    font-family: regular-font !important;
+}
+
+label {
+    font-family: regular-font !important;
+}
+
+/*---------Button---------*/
+/*--- Size ---*/
+.btn-exlarge {
+    font-size: 24px;
+    padding: 18px 170px;
+    height: 64px;
+    border-radius: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn-large {
+    font-size: 24px;
+    padding: 26px;
+    height: 64px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn-medium {
+    font-size: 20px;
+    padding: 24px 26px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn-small {
+    font-size: 18px;
+    padding: 14px 62px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Button hierarchy */
+.prim-btn {
+    background-color:  #9E1D26;
+    color: #F8EDEE;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.sec-btn {
+    background-color: #F8EDEE;
+    color: #9E1D26;
+    border: 1px solid #9E1D26;
+    transition: background-color 0.3s ease;
+}
+

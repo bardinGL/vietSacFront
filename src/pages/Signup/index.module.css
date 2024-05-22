@@ -1,0 +1,63 @@
+.wrapper {
+    background-image: url(/public/img/loginBackground.png);
+    width: 100%;
+    height: 850px;
+}
+
+.section-signup {
+    width: 1230px;
+    height: 560px;
+    padding: 80px;
+
+    background-color: #FFD467;
+    border-radius: 50px;
+}
+
+.input-title {
+    margin: 0;
+    padding: 0 0 !important;
+    color: #264234;
+    font-size: 18px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.signup-input {
+    padding: 10px 0 !important;
+    font-size: 20px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 2px solid rgba(38, 66, 52, 0.50);
+}
+
+.input-date {
+    width: 120px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
+
+.btn-next {
+    bottom: 0px;
+    right: 0;
+}
+
+.btn-prev {
+    bottom: 0px;
+    left: 0;
+}
+
+.error-feedback {
+    font-size: 18px;
+    font-weight: 450;
+    color: red;
+}

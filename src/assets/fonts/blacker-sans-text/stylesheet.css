@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-BlackItalic.eot');
+    src: local('Blacker Sans Text Black Italic'), local('BlackerSansText-BlackItalic'),
+        url('BlackerSansText-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-BlackItalic.woff2') format('woff2'),
+        url('BlackerSansText-BlackItalic.woff') format('woff'),
+        url('BlackerSansText-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Black.eot');
+    src: local('Blacker Sans Text Black'), local('BlackerSansText-Black'),
+        url('BlackerSansText-Black.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Black.woff2') format('woff2'),
+        url('BlackerSansText-Black.woff') format('woff'),
+        url('BlackerSansText-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-BoldItalic.eot');
+    src: local('Blacker Sans Text Bold Italic'), local('BlackerSansText-BoldItalic'),
+        url('BlackerSansText-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-BoldItalic.woff2') format('woff2'),
+        url('BlackerSansText-BoldItalic.woff') format('woff'),
+        url('BlackerSansText-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-ExtraboldItalic.eot');
+    src: local('Blacker Sans Text Extrabold Italic'), local('BlackerSansText-ExtraboldItalic'),
+        url('BlackerSansText-ExtraboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-ExtraboldItalic.woff2') format('woff2'),
+        url('BlackerSansText-ExtraboldItalic.woff') format('woff'),
+        url('BlackerSansText-ExtraboldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text Book';
+    src: url('BlackerSansText-Book.eot');
+    src: local('Blacker Sans Text Book'), local('BlackerSansText-Book'),
+        url('BlackerSansText-Book.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Book.woff2') format('woff2'),
+        url('BlackerSansText-Book.woff') format('woff'),
+        url('BlackerSansText-Book.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Extrabold.eot');
+    src: local('Blacker Sans Text Extrabold'), local('BlackerSansText-Extrabold'),
+        url('BlackerSansText-Extrabold.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Extrabold.woff2') format('woff2'),
+        url('BlackerSansText-Extrabold.woff') format('woff'),
+        url('BlackerSansText-Extrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Bold.eot');
+    src: local('Blacker Sans Text Bold'), local('BlackerSansText-Bold'),
+        url('BlackerSansText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Bold.woff2') format('woff2'),
+        url('BlackerSansText-Bold.woff') format('woff'),
+        url('BlackerSansText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text Book';
+    src: url('BlackerSansText-BookItalic.eot');
+    src: local('Blacker Sans Text Book Italic'), local('BlackerSansText-BookItalic'),
+        url('BlackerSansText-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-BookItalic.woff2') format('woff2'),
+        url('BlackerSansText-BookItalic.woff') format('woff'),
+        url('BlackerSansText-BookItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-ExtralightItalic.eot');
+    src: local('Blacker Sans Text Extralight Italic'), local('BlackerSansText-ExtralightItalic'),
+        url('BlackerSansText-ExtralightItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-ExtralightItalic.woff2') format('woff2'),
+        url('BlackerSansText-ExtralightItalic.woff') format('woff'),
+        url('BlackerSansText-ExtralightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-LightItalic.eot');
+    src: local('Blacker Sans Text Light Italic'), local('BlackerSansText-LightItalic'),
+        url('BlackerSansText-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-LightItalic.woff2') format('woff2'),
+        url('BlackerSansText-LightItalic.woff') format('woff'),
+        url('BlackerSansText-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Extralight.eot');
+    src: local('Blacker Sans Text Extralight'), local('BlackerSansText-Extralight'),
+        url('BlackerSansText-Extralight.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Extralight.woff2') format('woff2'),
+        url('BlackerSansText-Extralight.woff') format('woff'),
+        url('BlackerSansText-Extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-MediumItalic.eot');
+    src: local('Blacker Sans Text Medium Italic'), local('BlackerSansText-MediumItalic'),
+        url('BlackerSansText-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-MediumItalic.woff2') format('woff2'),
+        url('BlackerSansText-MediumItalic.woff') format('woff'),
+        url('BlackerSansText-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-HeavyItalic.eot');
+    src: local('Blacker Sans Text Heavy Italic'), local('BlackerSansText-HeavyItalic'),
+        url('BlackerSansText-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-HeavyItalic.woff2') format('woff2'),
+        url('BlackerSansText-HeavyItalic.woff') format('woff'),
+        url('BlackerSansText-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Light.eot');
+    src: local('Blacker Sans Text Light'), local('BlackerSansText-Light'),
+        url('BlackerSansText-Light.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Light.woff2') format('woff2'),
+        url('BlackerSansText-Light.woff') format('woff'),
+        url('BlackerSansText-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Italic.eot');
+    src: local('Blacker Sans Text Italic'), local('BlackerSansText-Italic'),
+        url('BlackerSansText-Italic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Italic.woff2') format('woff2'),
+        url('BlackerSansText-Italic.woff') format('woff'),
+        url('BlackerSansText-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Heavy.eot');
+    src: local('Blacker Sans Text Heavy'), local('BlackerSansText-Heavy'),
+        url('BlackerSansText-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Heavy.woff2') format('woff2'),
+        url('BlackerSansText-Heavy.woff') format('woff'),
+        url('BlackerSansText-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Thin.eot');
+    src: local('Blacker Sans Text Thin'), local('BlackerSansText-Thin'),
+        url('BlackerSansText-Thin.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Thin.woff2') format('woff2'),
+        url('BlackerSansText-Thin.woff') format('woff'),
+        url('BlackerSansText-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Regular.eot');
+    src: local('Blacker Sans Text Regular'), local('BlackerSansText-Regular'),
+        url('BlackerSansText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Regular.woff2') format('woff2'),
+        url('BlackerSansText-Regular.woff') format('woff'),
+        url('BlackerSansText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-ThinItalic.eot');
+    src: local('Blacker Sans Text Thin Italic'), local('BlackerSansText-ThinItalic'),
+        url('BlackerSansText-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-ThinItalic.woff2') format('woff2'),
+        url('BlackerSansText-ThinItalic.woff') format('woff'),
+        url('BlackerSansText-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Blacker Sans Text';
+    src: url('BlackerSansText-Medium.eot');
+    src: local('Blacker Sans Text Medium'), local('BlackerSansText-Medium'),
+        url('BlackerSansText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('BlackerSansText-Medium.woff2') format('woff2'),
+        url('BlackerSansText-Medium.woff') format('woff'),
+        url('BlackerSansText-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+

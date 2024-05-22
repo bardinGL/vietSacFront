@@ -1,0 +1,78 @@
+.wrapper {
+    background-image: url(/public/img/loginBackground.png);
+    width: 100%;
+    height: 850px;
+}
+
+
+.section-login {
+    width: 1230px;
+    height: 560px;
+    padding: 80px;
+
+    background-color: #FFD467;
+    border-radius: 50px;
+}
+
+.section-login-logo {
+
+}
+
+.input-title {
+    margin: 0;
+    padding: 0 0 !important;
+    color: #264234;
+    font-size: 20px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.login-email {
+    padding: 10px 0 !important;
+    font-size: 20px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 2px solid rgba(38, 66, 52, 0.50);
+}
+
+.login-password {
+    padding: 10px 0 !important;
+    font-size: 20px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 2px solid rgba(38, 66, 52, 0.50);
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: #FFD467 5000s ease-in-out 0s;
+}
+
+.btn-login {
+    padding: 15px 60px;
+    border-radius: 50px;
+    background: #9E1D26;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #E8D8C8;
+    font-weight: 600;
+    margin-top: 65px;
+    border: none;
+}
