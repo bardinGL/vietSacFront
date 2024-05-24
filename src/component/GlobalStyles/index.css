@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+/* Reset css */
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /*--Typography--*/
 /*---------Font family---------*/
 @font-face {
@@ -32,10 +38,15 @@
     src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.ttf"),
          url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.woff");
 }
+
 @font-face {
-    font-family: thin-font;
-    src: url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.ttf"),
-         url("../../assets/fonts/blacker-sans-text/BlackerSansText-Thin.woff");
+    font-family: header-bold-font;
+    src: url("../../assets/fonts/bt-suave/btsuave-bold.otf");   
+}
+
+@font-face {
+    font-family: header-regular-font;
+    src: url("../../assets/fonts/bt-suave/btsuave-regular.otf");   
 }
 
 /*---Headline---*/

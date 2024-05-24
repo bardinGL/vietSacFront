@@ -17,3 +17,82 @@
     font-weight: 500;
     text-transform: capitalize;
 }
+
+.navigation-icon:hover {
+    cursor: pointer;
+}
+
+.navigation {
+    z-index: 100;
+    -webkit-transform:translateY(-1000px);
+    -moz-transform:translateY(-1000px);
+    transform:translateY(-1200px);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.open-nav {
+    opacity: 1;
+    -webkit-transform:translateY(-120px);
+    -moz-transform:translateY(-120px);
+    transform:translateY(-120px);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+/* CSS for navigation */
+.wrapper-nav {
+    background-image: url(/public/img/headerBackground.png);
+    background-size: 100%;
+}
+
+.navigation-background {
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+}
+
+.navigation-close-btn {
+    position: relative;
+    z-index: 2;
+    top: 50px;
+    left: 57px;
+}
+
+.navigation-close-btn:hover {
+    cursor: pointer;
+}
+
+.navigation-options {
+    position: relative;
+    z-index: 99;
+    top: 250px;
+    left: 450px;
+    width: 700px;
+}
+
+.nav-option {
+    text-decoration: none;
+    color: #EFDBCA;
+    text-transform: uppercase;
+    font-family: header-regular-font !important;
+    font-size: 90px;
+}
+
+.chosen-option,
+.nav-option:hover {
+    color: #FFD367;
+}
+
+.close-nav {
+    -webkit-transform:translateY(-1000px);
+    -moz-transform:translateY(-1000px);
+    transform:translateY(-1200px);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
