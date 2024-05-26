@@ -13,7 +13,8 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header({isTransparent}) {
+    console.log(isTransparent)
     const navigationOption = [ 
         { title: 'home', link: '#', current: true},
         { title: 'sản phẩm', link: '#', current: false},
@@ -40,9 +41,9 @@ function Header() {
         }
     }
 
-    var prevScrollpos = window.scrollY;
+    let prevScrollpos = window.scrollY;
     window.onscroll = function() {
-    var currentScrollPos = window.scrollY;
+    let currentScrollPos = window.scrollY;
     if (prevScrollpos < currentScrollPos) {
         handleCloseNav();
     }
@@ -50,10 +51,10 @@ function Header() {
     }
 
     return (
-    <div>
+    <div className={`${cx('header-cover')} ${!isTransparent ? cx('intransparent-header') : ''}`}>
         <div className={`${cx('wrapper')} d-flex justify-content-between align-items-center`}>
             <div>
-                <h5 class="mx-2"><img src={opNavIcon} alt="Navigation" className={cx('navigation-icon')} onClick={handleOpenNav}/></h5>
+                <h5><img src={opNavIcon} alt="Navigation" className={cx('navigation-icon')} onClick={handleOpenNav}/></h5>
             </div>
             <div className='d-flex justify-content-center flex-column' style={{paddingLeft: '165px'}}>
                 <img className={`${cx('header-logo')}`} src={logoSmall} alt="Navigation"/>
@@ -69,16 +70,14 @@ function Header() {
             </div>
         </div>
         <div className={cx('navigation')}>
-            <div className={`${cx('wrapper-nav')} d-flex justify-content-between align-items-center`}>
-                <div className={`${cx('navigation-background')}`}>
-                    <img className={`${cx('navigation-background')} w-100`} src={navBackground}/>
-                    <img src={closeIcon} className={`${cx('navigation-close-btn')}`} onClick={handleCloseNav}/>
-                    <div className={`${cx('navigation-options')}`}>
-                        {navigationOption.map((option, index) => 
-                        <div className={`${index % 2 !== 0 ? 'ps-5' : ''}`}>
+            <div className={`${cx('wrapper-nav')}`}>
+                <img className={`${cx('navigation-background')}`} src={navBackground}/>
+                <img src={closeIcon} className={`${cx('navigation-close-btn')}`} onClick={handleCloseNav}/>
+                <div className={`${cx('navigation-options')}`}>
+                    {navigationOption.map((option, index) => 
+                    <div className={`${index % 2 !== 0 ? 'ps-5' : ''}`}>
                         <a href={option.link} className={`${option.current ? cx('chosen-option') : ''} ${cx('nav-option')} w-auto`}>{option.title}</a>
-                        </div>)}
-                    </div>
+                    </div>)}
                 </div>
             </div>
         </div>

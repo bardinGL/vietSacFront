@@ -1,7 +1,20 @@
+.header-cover {
+    position: absolute;
+    width: 100%;
+    z-index: 10000;
+}
+
+.intransparent-header {
+    position: relative;
+}
+
+.intransparent-header .wrapper {
+    background-color: #264234;
+}
+
 .wrapper {
     padding: 29px 57px;
     height: 120px;
-    background-color: #264234;
 }
 
 .header-logo-text {
@@ -30,6 +43,8 @@
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+    height: auto;
+    position: relative;
 }
 
 .open-nav {
@@ -46,6 +61,9 @@
 .wrapper-nav {
     background-image: url(/public/img/headerBackground.png);
     background-size: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
 }
 
 .navigation-background {
@@ -71,7 +89,7 @@
     position: relative;
     z-index: 99;
     top: 250px;
-    left: 450px;
+    left: 400px;
     width: 700px;
 }
 
@@ -80,7 +98,8 @@
     color: #EFDBCA;
     text-transform: uppercase;
     font-family: header-regular-font !important;
-    font-size: 90px;
+    font-size: 100px;
+    line-height: 120px;
 }
 
 .chosen-option,
