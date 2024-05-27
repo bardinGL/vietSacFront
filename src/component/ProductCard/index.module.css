@@ -1,12 +1,6 @@
 @import '../GlobalStyles/index.css';
 
 .wrapper {
-    display: inline-block;
-    padding: 0 10px 32px 10px;
-}
-
-.section-product-img:hover {
-    border: 2px solid #9E1D26;
 }
 
 .section-product-info {
@@ -15,16 +9,16 @@
 
 .section-product-img {
     border-radius: 20px;
-    width: 220px;
-    height: 220px;
+    border: 2px solid #9E1D26;
+    width: 350px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
 }
 
 .section-product-img img {
-    width: 160px;
+
 }
 
 .small-red-box {
@@ -34,17 +28,17 @@
 }
 
 .product-name p {
-    font-size: 18px;
+    font-size: 24px;
     color: #264234;
     text-align: left;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     text-transform: capitalize;
     font-family: medium-font !important;
 }
 
 .price-after {
-    color: #9E1D26;
-    font-size: 24px;
+    color: #264234;
+    font-size: 32px;
     text-align: left;
     margin-bottom: 0;
     font-family: medium-font !important;
@@ -52,9 +46,8 @@
 
 .price-before {
     color: rgba(38, 66, 52, 0.50);
-    font-size: 18px;
+    font-size: 24px;
     text-decoration: line-through;
     text-align: left;
     font-family: medium-font !important;
-    margin-bottom: 0;
 }

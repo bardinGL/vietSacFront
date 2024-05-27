@@ -14,8 +14,6 @@ import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
 
-
-
 const cx = classNames.bind(styles);
 
 function Home() {

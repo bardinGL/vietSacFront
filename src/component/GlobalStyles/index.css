@@ -49,6 +49,11 @@ body {
     src: url("../../assets/fonts/bt-suave/btsuave-regular.otf");   
 }
 
+@font-face {
+    font-family: breadcrumb-font;
+    src: url("../../assets/fonts/be-vietnam-pro/BeVietnamPro-Thin.ttf");
+}
+
 /*---Headline---*/
 h1, h2, h3, h4, h5, h6 {
 	font-family: bold-font !important;

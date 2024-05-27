@@ -1,0 +1,83 @@
+@import url('../../component/GlobalStyles/index.css');
+
+.wrapper {
+    width: 100%;
+    background-color: #f7eeef;
+}
+
+.section-banner {
+    position: relative;
+    width: 100%;
+}
+
+.section-banner img {
+    width: 100%;
+}
+
+.banner-title h1 {
+    position: absolute;
+    top: 35px;
+    left: 100px;
+
+    font-size: 70px;
+    font-weight: 500;
+    color: #FFD467;
+    font-family: header-bold-font !important;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    position: absolute;
+    top: 60px;
+    right: 140px;
+}
+
+/* Page */
+.page-title h1 {
+    color: #9E1D26;
+    font-size: 80px;
+    font-weight: 500;
+    padding: 65px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: header-regular-font !important;
+}
+
+.section-products {
+    padding: 0 100px;
+}
+
+.filter-container {
+    width: 20%;
+}
+
+.filter-container h2 {
+    font-size: 40px;
+    color: #264234;
+    margin-bottom: 30px;
+}
+
+.filter-title {
+    padding-bottom: 16px;
+    border-bottom: rgba(38, 66, 52, 0.50) solid 1px;
+}
+
+.filter-options p{
+    color: rgba(38, 66, 52, 0.50);
+    font-size: 24px;
+    font-family: breadcrumb-font !important;
+}
+
+.filter-options p:hover {
+    color: #375345;
+    cursor: pointer;
+}
+
+.option-chosen {
+    color: #264234 !important;
+}
+
+.product-container {
+    /* padding-left: 100px; */
+    width: 70%;
+}

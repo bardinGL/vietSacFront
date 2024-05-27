@@ -14,7 +14,6 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 function Header({isTransparent}) {
-    console.log(isTransparent)
     const navigationOption = [ 
         { title: 'home', link: '#', current: true},
         { title: 'sản phẩm', link: '#', current: false},

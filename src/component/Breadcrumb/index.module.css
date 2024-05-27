@@ -1,0 +1,25 @@
+.breadcrumb {
+    padding: 10px;
+}
+
+.breadcrumb li {
+    display: inline;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.breadcrumb li a {
+    color: #FFF;
+    text-decoration: none;
+    font-family: breadcrumb-font !important;
+}
+
+.breadcrumb li+li:before {
+    padding: 0 2px ;
+    color: #FFF;
+    content: "/\00a0";
+    font-family: breadcrumb-font !important;
+}
+
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
