@@ -57,12 +57,37 @@
     width: 300px;
     border-top-left-radius: 48%;
     border-top-right-radius: 48%;
+    border: 7px solid transparent;
+    animation: hoverOutEffect 0.25s;
 }
 
 .category-option img:hover {
-    transform: scale(0.98);
+    transform: scale(0.96);
     cursor: pointer;
-    border: 5px solid #FFD367;
+    animation: hoverInEffect 0.25s;
+    border: 7px solid #FFD367;
+}
+
+@keyframes hoverInEffect {
+    from {
+        transform: scale(1);
+        border: 7px solid transparent;
+    }
+    to {
+        transform: scale(0.96);
+        border: 7px solid #FFD367;
+    }
+}
+
+@keyframes hoverOutEffect {
+    from {
+        transform: scale(0.96);
+        border: 7px solid #FFD367;
+    }
+    to {
+        transform: scale(1);
+        border: 7px solid transparent;
+    }
 }
 
 .category-option p {

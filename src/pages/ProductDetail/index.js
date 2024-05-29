@@ -1,13 +1,7 @@
+import {Helmet} from "react-helmet";
+
 import classNames from 'classnames/bind';
 import styles from './index.module.css';
-
-import ProductCard from '../../component/ProductCard';
-
-import homeBanner from '../../assets/images/homeBanner.png'
-
-import gomCategory from '../../assets/images/category/gomCategory.png'
-import thocamCategory from '../../assets/images/category/thocamCategory.png'
-import danlatCategory from '../../assets/images/category/danlatCategory.png'
 
 import chen from '../../assets/images/product/chen.png'
 import ghe from '../../assets/images/product/ghe.png'
@@ -99,14 +93,17 @@ function ProductDetail() {
                             </ul>
                         </div>
                     </div>
-                    <div className={`${cx('img-preview')}`}>
-                        <img src={chen}/>
-                    </div>
                 </div>
             </div>
             <div className={`${cx('section-realted-product')} d-flex flex-row`}>
 
             </div>
+            <Helmet>
+                <script >
+                    document.getElementById('des-tab').style.display = "block";
+                    document.getElementById('size-tab').style.display = "none";
+                </script>
+            </Helmet>
         </div>
     )
 }

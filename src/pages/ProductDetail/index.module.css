@@ -13,12 +13,13 @@
 
 .img-option {
     border-radius: 20px;
-    background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
     margin-right: 50px;
+    background-color: #FFFFFF;
+    border: 2px solid transparent;
 }
 
 .img-option img {
@@ -26,23 +27,35 @@
 }
 
 .img-option:hover {
+    animation: hoverEffect 0.5s;
     border: 2px solid #9E1D26;
     background-color: transparent;
 }
 
+@keyframes hoverEffect {
+    from {
+        background-color: #FFFFFF;
+        border: 2px solid transparent;
+    }
+    to {
+        border: 2px solid #9E1D26;
+        background-color: transparent;
+    }
+}
+
 .img-preview {
     border-radius: 20px;
-    background-color: #FFFFFF;
+    border: 2px solid #9E1D26;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    width: auto;
-    height: auto;
+    height: 100%;
 }
 
 .img-preview img {
-    width: 300px;
+    min-width: 500px;
 }
 
 .small-red-box {
@@ -64,7 +77,7 @@
 
 .tab-option {
     display: none;
-    animation: fadeEffect 0.5s;
+    animation: fadeEffect 1s;
 }
 
 @keyframes fadeEffect {
