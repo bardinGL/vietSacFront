@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './index.module.css';
 
-import ProductItem from '../../component/ProductItem';
+import ProductCard from '../../component/ProductCard';
 
 import homeBanner from '../../assets/images/homeBanner.png'
 
@@ -55,8 +55,8 @@ function Home() {
                 <div className={`${cx('category-title')}`}>
                     <h1>hot deal</h1>
                 </div>
-                <div className={`${cx('category')} w-100 d-flex flex-row justify-content-around`}>
-                    {productsHotDeal.map((product) => (<ProductItem product={product}/>))}
+                <div className={`${cx('hot-deal')} w-100 d-flex flex-row justify-content-around`}>
+                    {productsHotDeal.map((product) => (<ProductCard product={product}/>))}
                 </div>
             </div>
         </div>

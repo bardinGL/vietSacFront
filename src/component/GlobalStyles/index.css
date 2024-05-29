@@ -1,6 +1,10 @@
 @charset "utf-8";
 
 /* Reset css */
+*, *::before, *::after{
+    box-sizing: border-box; 
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -68,7 +72,7 @@ a {
     font-family: regular-font !important;
 }
 
-label, p {
+label, p, span {
     font-family: regular-font !important;
 }
 
@@ -111,6 +115,20 @@ label, p {
     text-transform: uppercase;
     vertical-align: middle;
     text-align: center;
+}
+
+.btn-tabs {
+    font-size: 18px;
+    padding: 8px 16px;
+    width: 240px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    color: rgba(38, 66, 52, 0.50);
+    vertical-align: middle;
+    text-align: center;
+    font-family: regular-font !important;
 }
 
 /* Button hierarchy */

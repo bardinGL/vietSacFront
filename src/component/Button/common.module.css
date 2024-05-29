@@ -76,6 +76,16 @@ a {
     text-align: center;
 }
 
+.btn-tabs {
+    font-size: 24px;
+    padding: 8px 16px;
+    height: 48px;
+    border-radius: 10px;
+    background: #F3CD6A;
+    vertical-align: middle;
+    text-align: center;
+}
+
 /* Button hierarchy */
 .prim-btn {
     background-color:  #9E1D26;
