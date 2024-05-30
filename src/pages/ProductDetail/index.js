@@ -8,7 +8,6 @@ import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
 import { useState } from 'react';
-import RelatedProductItem from "../../component/RelatedProductItem";
 
 const cx = classNames.bind(styles);
 
@@ -109,7 +108,7 @@ function ProductDetail() {
                 </div>
             </div>
             <div className={`${cx('section-related-product')} d-flex flex-row`}>
-                {relatedProducts.map((product) => (<RelatedProductItem product={product}/>))}
+                {/* {relatedProducts.map((product) => (<RelatedProductItem product={product}/>))} */}
             </div>
             <Helmet>
                 <script >

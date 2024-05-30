@@ -1,7 +1,7 @@
 .wrapper {
     background-image: url(/public/img/loginBackground.png);
     width: 100%;
-    height: 850px;
+    min-height: 1080px;
 }
 
 .section-signup {
@@ -82,4 +82,3 @@ button span {
     font-weight: 450;
     color: red;
 }
-
