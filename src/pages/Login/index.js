@@ -20,11 +20,11 @@ const Login = () => {
                     <div className={`${cx('section-login-logo')} col d-flex align-items-center`}>
                         <div className='col'>
                             <div className={`row`}>
-                                <p className={cx('input-title')}>email/sđt</p>
+                                <label className={cx('input-title')}>email/sđt</label>
                                 <input className={cx('login-email')} type='email' placeholder='Nhập email của bạn'/>
                             </div>
                             <div className={`row mt-4`}>
-                                <p className={cx('input-title')}>mật khẩu</p>
+                                <label className={cx('input-title')}>mật khẩu</label>
                                 <input className={cx('login-password')} type='password' placeholder='Nhập mật khẩu của bạn'/>
                             </div>
                             <button className={`${cx('btn-login')} float-end`}>
@@ -32,6 +32,9 @@ const Login = () => {
                             </button>
                         </div>
                     </div>
+                    <a href='/signup' className={`${cx('signup-option')}`}>
+                        Chưa có tài khoản? ĐĂNG KÝ NGAY
+                    </a>
                 </div>
            </div>
         </div>

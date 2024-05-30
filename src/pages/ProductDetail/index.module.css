@@ -72,7 +72,7 @@
 
 .tabs {
     margin-top: 18px;
-    width: 500px;
+    width: 600px;
 }
 
 .tab-option {
@@ -85,8 +85,9 @@
     to {opacity: 1;}
 }
 
-#des-tab {
+.tab-option p {
     text-align: justify;
+    font-size: 20px !important;
 }
 
 #size-tab {
@@ -99,7 +100,64 @@
     padding: 0;
 }
 
-.size-table li {
+.size-table li:not(:last-child) {
     padding-bottom: 8px;
-    border-bottom: #dad7d4 solid 1px ;
+    border-bottom: #dad7d4 solid 2px ;
+}
+
+.product-price {
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: #dad7d4 solid 2px;
+    border-bottom: #dad7d4 solid 2px;
+    color: #9E1D26;
+}
+
+.product-quant {
+    margin: 20px 0;
+}
+
+.product-quant label {
+    color: #264234;
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.product-quant input {
+    color: #264234;
+    font-size: 24px;
+    border: none;
+    border-bottom: 1px solid rgba(38, 66, 52, 0.50);
+    font-weight: 700;
+    background-color: transparent;
+}
+
+.add-btn {
+    color: #9E1D26;
+    width: 290px;
+    border: none;
+}
+
+.add-btn:hover span {
+    border-bottom: none;
+    animation: addBtnHoverEffect 0.5s;
+    border-bottom: 1px solid #9E1D26;
+    font-weight: 600;
+    transform: scale(2);
+}
+
+@keyframes addBtnHoverEffect {
+    from {
+        border-bottom: none;
+        font-weight: 400;
+    }
+    to {
+        border-bottom: 1px solid #9E1D26;
+        font-weight: 600;
+    }
+}
+
+.buy-btn {
+    width: 290px;
 }

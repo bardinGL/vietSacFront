@@ -8,11 +8,12 @@ import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
 import { useState } from 'react';
+import RelatedProductItem from "../../component/RelatedProductItem";
 
 const cx = classNames.bind(styles);
 
 function ProductDetail() {
-    const productsHotDeal = [
+    const relatedProducts = [
         {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
         {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
         {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
@@ -93,10 +94,22 @@ function ProductDetail() {
                             </ul>
                         </div>
                     </div>
+                    <div className={`${cx('product-price')}`}>
+                        <h2>350.000 VND</h2>
+                    </div>
+                    <div className={`${cx('product-quant')} my-4`}>
+                        <label>Số lượng</label>
+                        <input className='ps-3' type='number' min={1} max={99}/>
+                    </div>
+                    <button className={`btn-exlarge sec-btn w-100 my-3`}>Thiết kế cho riêng bạn</button>
+                    <div className="d-flex justify-content-between my-3">
+                        <button className={`${cx('add-btn')} btn-large`}><span>Thêm vào giỏ hàng</span></button>
+                        <button className={`${cx('buy-btn')} btn-large prim-btn`}>Mua ngay</button>
+                    </div>
                 </div>
             </div>
-            <div className={`${cx('section-realted-product')} d-flex flex-row`}>
-
+            <div className={`${cx('section-related-product')} d-flex flex-row`}>
+                {relatedProducts.map((product) => (<RelatedProductItem product={product}/>))}
             </div>
             <Helmet>
                 <script >

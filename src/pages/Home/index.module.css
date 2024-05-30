@@ -11,14 +11,14 @@
 }
 
 .banner-title {
-    width: 410px;
+    width: 480px;
     position: absolute;
-    top: 370px;
-    left: 180px;
+    top: 415px;
+    left: 164px;
 }
 
 .banner-title h1 {
-    font-size: 70px;
+    font-size: 100px;
     color: #FFD367;
     font-family: header-regular-font !important;
 }
@@ -100,4 +100,5 @@
 .hot-deal {
     border-top: 2px solid #9E1D26;
     padding: 80px 20px;
+    background-color: #F8EEEE;
 }

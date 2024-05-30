@@ -16,10 +16,10 @@
 
 .banner-title h1 {
     position: absolute;
-    top: 35px;
-    left: 100px;
+    top: 48px;
+    left: 150px;
 
-    font-size: 70px;
+    font-size: 80px;
     font-weight: 500;
     color: #FFD467;
     font-family: header-bold-font !important;
@@ -28,8 +28,8 @@
 /* Breadcrumb */
 .breadcrumb {
     position: absolute;
-    top: 60px;
-    right: 140px;
+    top: 85px;
+    right: 150px;
 }
 
 /* Page */

@@ -1,3 +1,7 @@
+:root {
+    --header-wrapper-height: 180px;
+  }
+
 .header-cover {
     position: absolute;
     width: 100%;
@@ -13,13 +17,13 @@
 }
 
 .wrapper {
-    padding: 29px 57px;
-    height: 120px;
+    padding: 75px 90px;
+    height: var(--header-wrapper-height);
 }
 
 .header-logo-text {
     color: #FFD367;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     text-transform: capitalize;
     margin: 0;
@@ -37,9 +41,9 @@
 
 .navigation {
     z-index: 100;
-    -webkit-transform:translateY(-1000px);
-    -moz-transform:translateY(-1000px);
-    transform:translateY(-1200px);
+    -webkit-transform:translateY(-1500px);
+    -moz-transform:translateY(-1500px);
+    transform:translateY(-1700px);
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -49,9 +53,9 @@
 
 .open-nav {
     opacity: 1;
-    -webkit-transform:translateY(-120px);
-    -moz-transform:translateY(-120px);
-    transform:translateY(-120px);
+    -webkit-transform:translateY(calc(var(--header-wrapper-height) * (-1)));
+    -moz-transform:translateY(calc(var(--header-wrapper-height) * (-1)));
+    transform:translateY(calc(var(--header-wrapper-height) * (-1)));
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -77,8 +81,8 @@
 .navigation-close-btn {
     position: relative;
     z-index: 2;
-    top: 50px;
-    left: 57px;
+    top: 75px;
+    left: 90px;
 }
 
 .navigation-close-btn:hover {
@@ -88,7 +92,7 @@
 .navigation-options {
     position: relative;
     z-index: 99;
-    top: 250px;
+    top: 280px;
     left: 400px;
     width: 700px;
 }
@@ -108,9 +112,9 @@
 }
 
 .close-nav {
-    -webkit-transform:translateY(-1000px);
-    -moz-transform:translateY(-1000px);
-    transform:translateY(-1200px);
+    -webkit-transform:translateY(-1500px);
+    -moz-transform:translateY(-1500px);
+    transform:translateY(-1700px);
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;

@@ -1,0 +1,74 @@
+@import '../GlobalStyles/index.css';
+
+.wrapper {
+    display: inline-block;
+    padding: 0 10px 32px 10px;
+}
+
+.section-product-img:hover {
+    border: 2px solid #9E1D26;
+    background-color: transparent;
+}
+
+.section-product-info {
+    margin-top: 25px;
+}
+
+.section-product-img {
+    border: 2px solid #9E1D26;
+    width: 375px;
+    height: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.section-product-img img {
+    width: 250px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+  }
+  
+  
+  [id="heart"] {
+    position: absolute;
+    left: -100vw;
+  }
+  
+  [for="heart"] {
+    color: #aab8c2;
+    cursor: pointer;
+    font-size: 6em;
+    align-self: center;  
+    transition: color 0.2s ease-in-out;
+  }
+  
+  [for="heart"]:hover {
+    color: grey;
+  }
+  
+  [for="heart"]::selection {
+    color: none;
+    background: transparent;
+  }
+  
+  [for="heart"]::moz-selection {
+    color: none;
+    background: transparent;
+  }
+  
+  [id="heart"]:checked + label {
+    color: #e2264d;
+    will-change: font-size;
+    animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
+  }
+  
+  
+  
+  @keyframes heart {0%, 17.5% {font-size: 0;}}
+  

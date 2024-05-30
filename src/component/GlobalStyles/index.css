@@ -72,7 +72,7 @@ a {
     font-family: regular-font !important;
 }
 
-label, p, span {
+label, p, span, input {
     font-family: regular-font !important;
 }
 
@@ -80,9 +80,9 @@ label, p, span {
 /*--- Size ---*/
 .btn-exlarge {
     font-size: 24px;
-    padding: 18px 170px;
+    padding: 18px;
     height: 64px;
-    border-radius: 100px;
+    border-radius: 10px;
     font-weight: 600;
     text-transform: uppercase;
     vertical-align: middle;
@@ -91,7 +91,7 @@ label, p, span {
 
 .btn-large {
     font-size: 24px;
-    padding: 26px;
+    padding: 18px;
     height: 64px;
     border-radius: 10px;
     text-transform: uppercase;
@@ -120,7 +120,7 @@ label, p, span {
 .btn-tabs {
     font-size: 18px;
     padding: 8px 16px;
-    width: 240px;
+    width: 290px;
     height: 40px;
     border-radius: 10px;
     border: none;
