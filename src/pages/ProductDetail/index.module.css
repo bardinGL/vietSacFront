@@ -7,57 +7,6 @@
     padding: 100px 0 ;
 }
 
-.img-list .img-option:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-.img-option {
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    margin-right: 50px;
-    background-color: #FFFFFF;
-    border: 2px solid transparent;
-}
-
-.img-option img {
-    width: 132px;
-}
-
-.img-option:hover {
-    animation: hoverEffect 0.5s;
-    border: 2px solid #9E1D26;
-    background-color: transparent;
-}
-
-@keyframes hoverEffect {
-    from {
-        background-color: #FFFFFF;
-        border: 2px solid transparent;
-    }
-    to {
-        border: 2px solid #9E1D26;
-        background-color: transparent;
-    }
-}
-
-.img-preview {
-    border-radius: 20px;
-    border: 2px solid #9E1D26;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    height: 100%;
-}
-
-.img-preview img {
-    min-width: 500px;
-}
-
 .small-red-box {
     width: 101px;
     height: 10px;
@@ -160,4 +109,25 @@
 
 .buy-btn {
     width: 290px;
+}
+
+/* Modal */
+.section-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000000000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.section-modal h2 {
+    color: #264234;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
 }

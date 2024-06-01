@@ -1,0 +1,50 @@
+.img-list .img-option:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.img-option {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 50px;
+    background-color: #FFFFFF;
+    border: 2px solid transparent;
+}
+
+.img-option img {
+    width: 132px;
+}
+
+.img-option:hover {
+    animation: hoverEffect 0.5s;
+    border: 2px solid #9E1D26;
+    background-color: transparent;
+}
+
+@keyframes hoverEffect {
+    from {
+        background-color: #FFFFFF;
+        border: 2px solid transparent;
+    }
+    to {
+        border: 2px solid #9E1D26;
+        background-color: transparent;
+    }
+}
+
+.img-preview {
+    border-radius: 20px;
+    border: 2px solid #9E1D26;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 100%;
+}
+
+.img-preview img {
+    min-width: 500px;
+}
