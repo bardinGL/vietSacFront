@@ -1,19 +1,20 @@
 /* Progress bar */
 .progressbar {
     counter-reset: step;
-    padding: 0 20%;
+    padding: 0 10%;
 }
 
 .progressbar li {
     list-style: none;
     position: relative;
     text-align: center;
-    width: 100px;
+    width: 10%;
 }
 
 .progressbar li:before {
     content: url('../../assets/icon/uncheckRadioBtn.svg');
     background-color: #ffffff;
+    width: 36px;
     display: block;
     height: 30px;
     line-height: 27px;
@@ -23,10 +24,10 @@
   
   .progressbar-box {
     background: #264234;
-    width: 90%;
+    width: 70%;
     height: 5px;
     position: absolute;
-    top: 26%;
+    top: 25%;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -119,4 +120,31 @@ button span {
     font-size: 18px;
     font-weight: 450;
     color: red;
+}
+
+.overview-img {
+    background-color: transparent;
+}
+
+.overview-img img {
+    width: 420px;
+}
+
+.confirm-modal {
+    width: 486px;
+    height: 277px;
+    border-radius: 20px;
+    background: #FAF1F1;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.confirm-modal h2 {
+    width: 340px;
+    font-size: 30px;
+    color: #264234;
+    text-align: center;
 }

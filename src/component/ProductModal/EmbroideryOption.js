@@ -33,7 +33,7 @@ const EmbroideryOption = () => {
         return errors;
       }}
     >
-      {({ handleSubmit, errors }) => {
+      {({ handleSubmit, handleChange, errors }) => {
         return (
           <div className={`${cx('wrapper')} d-flex justify-content-around`}>
             <div className={`${cx('product-img')} w-auto`}>
@@ -47,6 +47,7 @@ const EmbroideryOption = () => {
                       <Space direction="vertical">
                         {embroiderOptions.map((option) => (
                             <Radio value={option.value} 
+                            onChange={handleChange}
                             style={{ fontSize: "20px", fontFamily: "Be Vietnam" }}>{option.text}</Radio>
                         ))}
                       </Space>

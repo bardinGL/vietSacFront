@@ -3,6 +3,7 @@ import { Steps } from "antd";
 import { Provider } from "./MultiStepModalContext";
 import Content from "./Content";
 import EmbroideryOption from "./EmbroideryOption";
+import Overview from "./Overview";
 
 import './index.module.css'
 import Progressbar from "./ProgressBar";
@@ -15,12 +16,13 @@ const contentInitialState = {
 };
 
 const embOptionInitialState = {
-  side: ""
+  embOption: ""
 };
 
 const progressbarStepTitle = [
   "Nhập nội dung",
-  "Chọn vị trí"
+  "Chọn vị trí",
+  "Overview"
 ]
 
 const renderStep = (step) => {
@@ -29,6 +31,8 @@ const renderStep = (step) => {
       return <Content/>;
     case 1:
       return <EmbroideryOption/>;
+    case 2:
+      return <Overview/>;
     default:
       return null;
   }
