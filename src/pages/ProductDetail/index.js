@@ -1,5 +1,6 @@
 import {Helmet} from "react-helmet";
-import Modal from "./Modal";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from '@material-ui/core/DialogContent';
 
 import classNames from 'classnames/bind';
 import styles from './index.module.css';
@@ -8,6 +9,8 @@ import chen from '../../assets/images/product/chen.png'
 import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
+
+import iconClose from '../../assets/icon/closeRed.svg'
 import { useState } from 'react';
 import TabsGallery from "../../component/TabsGallery";
 import ProductModal from "../../component/ProductModal";
@@ -31,6 +34,15 @@ function ProductDetail() {
     const handleOpenModal = () => {
         setOpenModal(true);
     };
+
+    const styles = theme => ({
+        dialogCustomizedWidth: {
+          'width': '1218px'
+        },
+        dialogCustomizedHeight: {
+            'height': '838px'
+          }
+      });
 
     const [tabs, setTabs] = useState('des-btn');
 
@@ -105,13 +117,18 @@ function ProductDetail() {
             <div className={`${cx('section-related-product')} d-flex flex-row`}>
                 {/* {relatedProducts.map((product) => (<RelatedProductItem product={product}/>))} */}
             </div>
-            <Modal isOpen={handleOpenModal} onClose={handleCloseModal}>
-                <div className={`${cx('section-modal')}`}>
-                    <button onClick={handleCloseModal}>close</button>
+            <Dialog  
+            open={openModal}
+            onClose={handleCloseModal}
+            maxWidth={'lg'}
+            >
+                 <div className={`${cx('section-modal')}`}>
+                    <img src={iconClose} className={`${cx('close-modal-btn')}`} onClick={handleCloseModal}/>
                     <h2>THIẾT KẾ MẪU CHO RIÊNG BẠN</h2>
                     <ProductModal/>
                 </div>
-            </Modal>
+                
+            </Dialog >
             <Helmet>
                 <script >
                     document.getElementById('des-tab').style.display = "block";

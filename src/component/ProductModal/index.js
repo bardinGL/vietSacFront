@@ -5,6 +5,7 @@ import Content from "./Content";
 import EmbroideryOption from "./EmbroideryOption";
 
 import './index.module.css'
+import Progressbar from "./ProgressBar";
 
 
 const { Step } = Steps;
@@ -16,6 +17,11 @@ const contentInitialState = {
 const embOptionInitialState = {
   side: ""
 };
+
+const progressbarStepTitle = [
+  "Nhập nội dung",
+  "Chọn vị trí"
+]
 
 const renderStep = (step) => {
   switch (step) {
@@ -34,7 +40,7 @@ const ProductModal = () => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const next = () => {
-        if (currentStep === 1) {
+        if (currentStep === 2) {
           setCurrentStep(0);
 
           setContent(contentInitialState);
@@ -46,17 +52,10 @@ const ProductModal = () => {
 
     const prev = () => setCurrentStep(currentStep - 1);
     return (
-      // <Provider value={{ content, setContent, next, prev, embOption, setEmbOption}}>
-      //   <Steps current={currentStep}>
-      //     <Step title={"Nhập nội dung"} />
-      //     <Step title={"Chọn vị trí"} />
-      //     {/* <Step title={"Overview"} /> */}
-      //   </Steps>
-      //   <main>{renderStep(currentStep)}</main>
-      // </Provider>
-      <div>
-        <h1>ádasdas</h1>
-      </div>
+      <Provider value={{ content, setContent, next, prev, embOption, setEmbOption}}>
+        <Progressbar currentStep={currentStep} progressbarStepTitle={progressbarStepTitle}/>
+        <main>{renderStep(currentStep)}</main>
+      </Provider>
     )
 }
 

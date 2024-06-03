@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Formik } from "formik";
-
+import { Button } from "antd";
 import { Input } from "formik-antd";
-import MultiStepModalContext from "./MultiStepModalContext";
 
-import chen from '../../assets/images/product/chen.png'
+import ModalContext from "./MultiStepModalContext";
+
+import tui from '../../assets/images/product/tui.png'
 
 import classNames from 'classnames/bind';
 import styles from './index.module.css'
@@ -17,7 +18,7 @@ const Content = () => {
     { value: "lower front", text: "Mặt trước phía dưới của túi" }
   ];
 
-  const { content, setContent, next, prev } = useContext(MultiStepFormContext);
+  const { content, setContent, next, prev } = useContext(ModalContext);
   return (
     <Formik
       initialValues={content}
@@ -27,24 +28,30 @@ const Content = () => {
       }}
       validate={(values) => {
         const errors = {};
-        // if (!values.info) errors.info = "Missing info is required";
-        // if (/^[0-9]+$/.test(values.lastName))
-        //     errors.lastName =
-        //         "Last name does not require numbers or special characters";
+        if (!values.content) errors.content = "Missing embroidered content";
+        if (values.content.length > 15)
+            errors.content =
+                "Embroidered content must not be over 15 characters";
         return errors;
       }}
     >
       {({ handleSubmit, errors }) => {
         return (
-          <div className={`${cx('wrapper')} d-flex justify-content-around`}>
-            <div className={`${cx('product-img')}`}>
-                <img src={chen}/>
+          <div className={`${cx('wrapper')} d-flex justify-content-between`}>
+            <div className={`${cx('product-img')} w-auto`}>
+                <img src={tui}/>
             </div>
-            <div className={`${cx('content-section')}`}>
-                <label className={cx('input-title')}>Nhập nội dung</label>
-                <p className={cx('input-note')}>Bất kì thông tin nào bạn muốn thêu lên túi (không quá 15 kí tự)</p>
-                <Input name={"content"}  className={cx('content-input')} placeholder="Tên/ Ngày sinh/ ..."/>
-                <p className={cx('error-feedback')}>{errors.email}</p>
+            <div className={`${cx('content-section')}  d-flex align-items-center`}>
+                <div>
+                    <label className={cx('input-title')}>Nhập nội dung</label>
+                    <p className={cx('input-note')}>Bất kì thông tin nào bạn muốn thêu lên túi (không quá 15 kí tự)</p>
+                    <Input name={"content"}  className={cx('input-content')} placeholder="Tên/ Ngày sinh/ ..."/>
+                    <p className={cx('error-feedback')}>{errors.content}</p>
+                    <Button className={`btn-small prim-btn ${cx('btn-next')} mt-5 float-end`} onClick={handleSubmit}>
+                        Tiếp theo
+                    </Button>
+                </div>
+                
             </div>
           </div>
         );

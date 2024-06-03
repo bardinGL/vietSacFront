@@ -110,11 +110,12 @@ label, p, span, input {
 
 .btn-small {
     font-size: 18px;
-    padding: 14px 62px;
+    padding: 15px 30px;
     border-radius: 50px;
     text-transform: uppercase;
     vertical-align: middle;
     text-align: center;
+    min-width: 157px;
 }
 
 .btn-tabs {
@@ -135,7 +136,7 @@ label, p, span, input {
 .prim-btn {
     background-color:  #9E1D26;
     color: #F8EDEE;
-    border: none;
+    border: 1px solid #9E1D26;
     transition: background-color 0.3s ease;
 }
 
@@ -144,4 +145,14 @@ label, p, span, input {
     color: #9E1D26;
     border: 1px solid #9E1D26;
     transition: background-color 0.3s ease;
+}
+
+/* Custom Antd component */
+.ant-radio .ant-radio-input {
+    width: 24px;
+    height: 24px;
+}
+
+.ant-radio {
+    padding-right: 18px;
 }

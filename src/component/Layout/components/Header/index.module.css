@@ -1,7 +1,7 @@
 .header-cover {
     position: absolute;
     width: 100%;
-    z-index: 10000;
+    z-index: 100;
 }
 
 .intransparent-header {
