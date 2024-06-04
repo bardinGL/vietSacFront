@@ -9,6 +9,7 @@
     position: relative;
     text-align: center;
     width: 10%;
+    color: rgba(38, 66, 52, 0.50);
 }
 
 .progressbar li:before {
@@ -40,7 +41,7 @@
   
   .progressbar li.active:after,
   .progressbar li.complete:after {
-    background: #3aac5d;
+    background: #264234;
   }
   
   .progressbar li.active:before {
@@ -48,8 +49,8 @@
   }
   
   .progressbar li.active {
-    color: #3aac5d;
-    font-weight: 700;
+    color: #264234;
+    font-weight: 500;
   }
 
 /* Steps */

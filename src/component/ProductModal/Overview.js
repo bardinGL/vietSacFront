@@ -36,7 +36,7 @@ function Confirm() {
             <div>
                 <h2>Lưu thiết kế và thêm sản phẩm vào giỏ hàng?</h2>
                 <div className="mt-5">
-                    <Button className={`btn-small sec-btn ${cx('btn-prev')}`} onClick={handleClose}>
+                    <Button className={`btn-small sec-btn ${cx('btn-prev')} me-4`} onClick={handleClose}>
                         Hủy
                     </Button>
                     <Button className={`btn-small prim-btn ${cx('btn-next')}`} onClick={handleClose}>

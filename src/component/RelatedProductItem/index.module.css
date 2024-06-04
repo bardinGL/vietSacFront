@@ -1,12 +1,11 @@
-@import '../GlobalStyles/index.css';
-
 .wrapper {
-    display: inline-block;
-    padding: 0 10px 32px 10px;
+  width: 375px;
+  height: 375px;
+  padding: 80px 65px;
+  border: #9E1D26 2px solid;
 }
 
 .section-product-img:hover {
-    border: 2px solid #9E1D26;
     background-color: transparent;
 }
 
@@ -15,9 +14,8 @@
 }
 
 .section-product-img {
-    border: 2px solid #9E1D26;
-    width: 375px;
-    height: 375px;
+    width: 240px;
+    height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,20 +25,21 @@
 .section-product-img img {
     width: 250px;
 }
-body {
+
+/* body {
     display: flex;
     justify-content: center;
     margin: 0;
     height: 100vh;
-  }
+  } */
   
   
-  [id="heart"] {
+  .heart-input {
     position: absolute;
     left: -100vw;
   }
   
-  [for="heart"] {
+  .heart-icon {
     color: #aab8c2;
     cursor: pointer;
     font-size: 6em;
@@ -48,27 +47,25 @@ body {
     transition: color 0.2s ease-in-out;
   }
   
-  [for="heart"]:hover {
+  .heart-icon:hover {
     color: grey;
   }
   
-  [for="heart"]::selection {
+  .heart-icon::selection {
     color: none;
     background: transparent;
   }
   
-  [for="heart"]::moz-selection {
+  .heart-icon::moz-selection {
     color: none;
     background: transparent;
   }
   
-  [id="heart"]:checked + label {
+  .heart-input:checked + label {
     color: #e2264d;
     will-change: font-size;
     animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
   }
-  
-  
   
   @keyframes heart {0%, 17.5% {font-size: 0;}}
   

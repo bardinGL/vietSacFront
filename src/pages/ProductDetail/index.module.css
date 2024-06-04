@@ -111,6 +111,18 @@
     width: 290px;
 }
 
+/* Related product */
+.related-product-title h1{
+    font-weight: 700;
+    color: #264234;
+}
+
+.big-red-box {
+    width: 156px;
+    height: 10px;
+    background-color: #9E1D26;
+}
+
 /* Modal */
 .section-modal {
     width: 1218px;

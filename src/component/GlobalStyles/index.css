@@ -2,7 +2,7 @@
 
 /* Reset css */
 *, *::before, *::after{
-    box-sizing: border-box; 
+    box-sizing: border-box !important; 
 }
 
 body {
@@ -155,4 +155,17 @@ label, p, span, input {
 
 .ant-radio {
     padding-right: 18px;
+}
+
+/* Custom carousel */
+.rec-dot_active {
+    background-color: #9E1D26 !important;
+    box-shadow: #9E1D26 0px 0px 1px 3px !important;
+}
+
+.rec-arrow-left,
+.rec-arrow-right {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    color: #9E1D26 !important;
 }

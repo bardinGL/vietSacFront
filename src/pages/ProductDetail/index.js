@@ -1,6 +1,6 @@
 import {Helmet} from "react-helmet";
 import Dialog from "@material-ui/core/Dialog";
-import DialogContent from '@material-ui/core/DialogContent';
+import Carousel from "react-elastic-carousel";
 
 import classNames from 'classnames/bind';
 import styles from './index.module.css';
@@ -14,11 +14,16 @@ import iconClose from '../../assets/icon/closeRed.svg'
 import { useState } from 'react';
 import TabsGallery from "../../component/TabsGallery";
 import ProductModal from "../../component/ProductModal";
+import RelatedProductItem from "../../component/RelatedProductItem";
 
 const cx = classNames.bind(styles);
 
 function ProductDetail() {
     const relatedProducts = [
+        {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
+        {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
+        {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
+        {productName: 'Túi', productImg: tui, price: '325.000', discount: '50'},
         {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
         {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
         {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
@@ -35,14 +40,12 @@ function ProductDetail() {
         setOpenModal(true);
     };
 
-    const styles = theme => ({
-        dialogCustomizedWidth: {
-          'width': '1218px'
-        },
-        dialogCustomizedHeight: {
-            'height': '838px'
-          }
-      });
+    const breakPoints = [
+        { width: 1, itemsToShow: 1, itemsToScroll: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+        { width: 768, itemsToShow: 3, itemsToScroll: 3 },
+        { width: 1200, itemsToShow: 4, itemsToScroll: 4 },
+      ];
 
     const [tabs, setTabs] = useState('des-btn');
 
@@ -114,8 +117,14 @@ function ProductDetail() {
                     </div>
                 </div>
             </div>
-            <div className={`${cx('section-related-product')} d-flex flex-row`}>
-                {/* {relatedProducts.map((product) => (<RelatedProductItem product={product}/>))} */}
+            <div className={`${cx('section-related-product')}`}>
+                <div className={`${cx('related-product-title')} text-center`}>
+                    <h1>SẢN PHẨM LIÊN QUAN</h1>
+                </div>
+                <div className={`${cx('big-red-box')} mx-auto mb-5`}></div>
+                <Carousel breakPoints={breakPoints}>
+                    {relatedProducts.map((product) => (<RelatedProductItem product={product}/>))}
+                </Carousel>
             </div>
             <Dialog  
             open={openModal}
