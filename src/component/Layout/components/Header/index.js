@@ -14,7 +14,6 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 function Header({isTransparent}) {
-    console.log("loading header");
     const navigationOption = [ 
         { title: 'home', link: '/home', current: true},
         { title: 'sản phẩm', link: '/shop', current: false},

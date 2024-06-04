@@ -13,6 +13,8 @@ import chen from '../../assets/images/product/chen.png'
 import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
+import { useEffect } from 'react';
+import { getHomeAPI } from '../../api/site';
 
 const cx = classNames.bind(styles);
 
@@ -28,6 +30,16 @@ function Home() {
         {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
         {productName: 'Túi', productImg: tui, price: '325.000', discount: '50'},
     ]
+
+    const fetchData = async() => {
+        const data = getHomeAPI();
+        console.log(data);
+    }
+
+    const data = [];
+    useEffect(() => {
+        fetchData();
+    })
     return (
         <div className={`${cx('wrapper')}`}>
             <div className={`${cx('section-banner')}`}>
