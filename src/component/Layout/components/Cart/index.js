@@ -3,6 +3,7 @@ import Box from '@material-ui/core/Box';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 
+import tui from '../../../../assets/images/product/tui.png'
 import trash from '../../../../assets/icon/trash.svg'
 import cart from '../../../../assets/icon/cart.svg'
 import close from '../../../../assets/icon/closeRed.svg'
@@ -26,25 +27,23 @@ function Cart() {
     };
 
     const relatedProducts = [
-        {productName: 'Chén', price: '325.000', discount: '0'},
-        {productName: 'Ghế', price: '325.000', discount: '50'},
-        {productName: 'Ví', price: '325.000', discount: '50'},
-        {productName: 'Túi', price: '325.000', discount: '50'},
-        {productName: 'Chén', price: '325.000', discount: '0'},
-        {productName: 'Ghế', price: '325.000', discount: '50'},
-        {productName: 'Ví', price: '325.000', discount: '50'},
-        {productName: 'Túi', price: '325.000', discount: '50'},
+        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
+        {productName: 'Ghế', img: tui, price: '325.000', discount: '50', quant: '10'},
+        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
+        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
+        {productName: 'Ghế', img: tui, price: '325.000', discount: '50', quant: '10'},
+        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
     ]
 
-    const CartProductItem = (product) => {
+    const CartProductItem = ({product}) => {
         return (
-        <div className={`${cx('product-wrapper')}`}>
+        <div className={`${cx('product-wrapper')} d-flex justify-content-between`}>
             <div className={`${cx('product-img')}`}>
                 <img src={product.img}/>
             </div>
-            <div>
-                <h2>{product.productName}</h2>
-                <h2>x {product.quant}</h2>
+            <div className={`${cx('product-info')} d-flex flex-column`}>
+                <h4>{product.productName}</h4>
+                <h4>x {product.quant}</h4>
                 <div className={`${cx('product-price')}`}>
                     {numberWithCommas((parseInt(product.price) * 
                     (1 - parseFloat(product.discount === 0 ? '100' : product.discount)/100)) * 1000)} VND
@@ -53,18 +52,27 @@ function Cart() {
             <div className={`${cx('product-delete')}`}>
                 <img src={trash}/>
             </div>
-            <button>asdsa</button>
         </div>)
     }
 
     const CartProductList = (
-        <Box role="presentation" onClick={toggleDrawer(false)}>
-            <img src={close} className={`${cx('cart-close')} float-end mt-4 me-4`} onClick={toggleDrawer(false)}/>
-            <div className={`${cx('cart-title')}`}>
-                <h2 className={`mb-2`}>Giỏ hàng</h2>
-                <div className={`${cx('small-red-box')}`}></div>
+        <Box role="presentation">
+            <div className='pb-5'>
+                <img src={close} className={`${cx('cart-close')} float-end mt-5 me-5`} onClick={toggleDrawer(false)}/>
+                <div className={`${cx('cart-title')}`}>
+                    <h2 className={`mb-2`}>Giỏ hàng</h2>
+                    <div className={`${cx('small-red-box')}`}></div>
+                </div>
+                {relatedProducts.map((product) => (<CartProductItem product={product}/>))}
+                <div className={`${cx('cart-footer')}`}>
+                    <button className={`btn-small prim-btn w-100 mb-3`}>
+                        THANH TOÁN NGAY
+                    </button>
+                    <button className={`btn-small sec-btn w-100`}>
+                        XEM GIỎ HÀNG
+                    </button>
+                </div>
             </div>
-            {relatedProducts.map((product) => (<CartProductItem product={product}/>))}
         </Box>
     );
 
