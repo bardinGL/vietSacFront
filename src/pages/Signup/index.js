@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Steps } from "antd";
 import { Provider } from "./MultiStepFormContext";
 import Name from "./Name";
 import Info from "./Info";
@@ -8,9 +7,6 @@ import Password from "./Password";
 import Review from "./Review";
 
 import './index.module.css'
-
-
-const { Step } = Steps;
 
 const nameInitialState = {
   firstName: "",
@@ -71,11 +67,6 @@ const Signup = () => {
     const prev = () => setCurrentStep(currentStep - 1);
     return (
       <Provider value={{ name, setName, next, prev, info, setInfo, email, setEmail, password, setPassword }}>
-        {/* <Steps current={currentStep}>
-          <Step title={"Fill in your details"} />
-          <Step title={"Address details"} />
-          <Step title={"Review and Save"} />
-        </Steps> */}
         <main>{renderStep(currentStep)}</main>
       </Provider>
     )

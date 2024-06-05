@@ -10,6 +10,7 @@ import closeIcon from '../../../../assets/icon/close.svg'
 import navBackground from '../../../../assets/images/headerBackground.png';
 
 import { useState } from 'react';
+import Cart from '../Cart';
 
 const cx = classNames.bind(styles);
 
@@ -65,7 +66,7 @@ function Header({isTransparent}) {
                     <img className={`${cx('header-icon')}`} src={userIcon} alt="User"/>
                 </div>
                 <img className={`mx-4`} src={line} alt="Line"/>
-                <img src={cart} alt="Cart"/>
+                <Cart/>
             </div>
         </div>
         <div className={cx('navigation')}>

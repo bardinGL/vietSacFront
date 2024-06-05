@@ -169,3 +169,9 @@ label, p, span, input {
     background-color: transparent !important;
     color: #9E1D26 !important;
 }
+
+/* Custom box element */
+.MuiDrawer-paper {
+    border-radius: 50px 0px 0px 0px !important;
+    background-color: #F8EEEE !important;
+}

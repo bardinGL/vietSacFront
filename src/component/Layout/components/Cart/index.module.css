@@ -1,0 +1,24 @@
+/* Product item */
+.product-wrapper {
+    width: 637px;
+    
+}
+
+/* Cart */
+.cart-close:hover {
+    cursor: pointer;
+}
+
+.cart-title {
+    padding: 40px 50px;
+}
+
+.cart-title h2 {
+    padding-bottom: 8px;
+}
+
+.small-red-box {
+    width: 101px;
+    height: 10px;
+    background-color: #9E1D26;
+}
