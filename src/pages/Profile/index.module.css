@@ -1,0 +1,129 @@
+.wrapper {
+    width: 100%;
+}
+
+.user-nav-section {
+    width: 20%;
+    padding-top: 50px;
+    background-color: #FFD367;
+}
+
+.user-nav-section .user-info {
+    max-width: 50%;
+}
+
+.user-info img {
+    object-fit: cover;
+    object-position: top center;
+    border-radius:50%;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.switch-tab-btn {
+    font-size: 29px;
+    font-weight: 600;
+    color: rgba(38, 66, 52, 0.50);
+    background-color: transparent;
+    border: none;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.logout-btn {
+    width: 80%;
+    margin: 0 10%;
+    border-radius: 100px;
+}
+
+/* Tabs */
+.chosen-tab {
+    color: #264234;
+    font-weight: 600;
+}
+
+.tab-option {
+    width: 80%;
+    min-height: 800px;
+    padding: 5% 10%;
+    display: none;
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.tab-option h2 {
+    color: #264234;
+    background-color: #f6eeef;
+}
+
+.input-title {
+    margin: 0;
+    padding: 0 0 !important;
+    color: #264234;
+    font-size: 20px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.info-input,
+.account-input {
+    padding: 10px 0 !important;
+    font-size: 20px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 2px solid rgba(38, 66, 52, 0.50);
+}
+
+.input-add {
+    width: 521px;
+    padding: 10px 10px 10px 18px;
+    font-size: 20px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 2px solid rgba(38, 66, 52, 0.50);
+}
+
+select.input-gender:focus, option.input-gender:focus {
+    background-color: transparent !important;
+    outline: none;
+}
+
+.input-name-wapper,
+.input-add-wrapper {
+    width: 30%;
+}
+
+.input-account-wrapper {
+    width: 48%;
+}
+
+/* Cart */
+.product-wrapper {
+    max-width: 40% ;
+}
+
+.product-img {
+    background-color: #FFD367;
+    width: 135px;
+    height: 135px;
+}
+
+.product-img img {
+    width: 135px;
+}
+
+.product-info h5 {
+    font-weight: 700;
+}

@@ -61,10 +61,12 @@ function Header({isTransparent}) {
                 <label className={`${cx('header-logo-text')}`}>Việt Sắc</label>
             </div>
             <div className={`${cx('header-user-section')} d-flex justify-content-center align-items-center flex-row`}>
-                <div className='d-flex justify-content-center align-items-center flex-row'>
-                    <p className={`${cx('user-title')} m-0 me-3`}>Say hi to us</p>
-                    <img className={`${cx('header-icon')}`} src={userIcon} alt="User"/>
-                </div>
+                <a href='/user'>
+                    <div className='d-flex justify-content-center align-items-center flex-row'>
+                        <p className={`${cx('user-title')} m-0 me-3`}>Say hi to us</p>
+                        <img className={`${cx('header-icon')}`} src={userIcon} alt="User"/>
+                    </div>
+                </a>
                 <img className={`mx-4`} src={line} alt="Line"/>
                 <Cart/>
             </div>

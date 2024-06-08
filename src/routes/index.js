@@ -8,11 +8,13 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import ProductDetail from "../pages/ProductDetail";
 import NoFooterLayout from "../component/Layout/NoFooterLayout";
+import Profile from "../pages/Profile";
 
 const publicRoutes = [
     { path: '/', component: Login, name: 'Login', layout: NoCompLayout},
     { path: '/signup', component: Signup, name: 'Signup', layout: NoCompLayout},
     { path: '/home', component: Home, name: 'Home', layout: TransHeaderLayout},
+    { path: '/user', component: Profile, name: 'Profile', layout: NoFooterLayout},
     { path: '/shop', component: Shop, name: 'Shop', layout: NoFooterLayout},
     { path: '/shop/:id', component: ProductDetail, name: 'Product Detail', layout: NoFooterLayout},
 ];
