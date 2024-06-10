@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: row;
+    background-color: #FFD367;
+}

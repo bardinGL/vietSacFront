@@ -11,6 +11,7 @@ import navBackground from '../../../../assets/images/headerBackground.png';
 
 import { useState } from 'react';
 import Cart from '../Cart';
+import { Helmet } from 'react-helmet';
 
 const cx = classNames.bind(styles);
 
@@ -56,9 +57,11 @@ function Header({isTransparent}) {
             <div>
                 <h5><img src={opNavIcon} alt="Navigation" className={cx('navigation-icon')} onClick={handleOpenNav}/></h5>
             </div>
-            <div className='d-flex justify-content-center flex-column' style={{paddingLeft: '165px'}}>
-                <img className={`${cx('header-logo')}`} src={logoSmall} alt="Navigation"/>
-                <label className={`${cx('header-logo-text')}`}>Việt Sắc</label>
+            <div style={{paddingLeft: '218px'}}>
+                <a href='/home' className={`d-flex justify-content-center flex-column`} style={{textDecoration: 'none'}}>
+                    <img className={`${cx('header-logo')}`} src={logoSmall} alt="Navigation"/>
+                    <p className={`${cx('header-logo-text')}`}>Việt Sắc</p>
+                </a>
             </div>
             <div className={`${cx('header-user-section')} d-flex justify-content-center align-items-center flex-row`}>
                 <a href='/user'>

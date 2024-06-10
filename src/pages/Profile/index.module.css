@@ -95,8 +95,8 @@
     border-bottom: 2px solid rgba(38, 66, 52, 0.50);
 }
 
-select.input-gender:focus, option.input-gender:focus {
-    background-color: transparent !important;
+.input-add:focus, .input-add:focus {
+    background-color: transparent;
     outline: none;
 }
 

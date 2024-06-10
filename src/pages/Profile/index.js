@@ -137,12 +137,12 @@ function Profile() {
                                 <p className={cx('error-feedback')}>{errors.lastName}</p>
                             </div>
                         </div>
-                        <div className={`w-100 d-flex justify-content-between`}>
+                        <div className={`w-100 mt-3 d-flex justify-content-between`}>
                             <div className={`${cx('input-add-wrapper')}`}>
                                 <select
                                 className={`${cx('input-add')} w-100`}
-                                name="gender"
-                                placeholder="Chọn giới tính"
+                                name="city"
+                                placeholder="Chọn thành phố"
                                 >
                                 {cityList.map((city) => 
                                     (<option 
@@ -154,8 +154,8 @@ function Profile() {
                             <div className={`${cx('input-add-wrapper')}`}>
                                 <select
                                 className={`${cx('input-add')} w-100`}
-                                name="gender"
-                                placeholder="Chọn giới tính"
+                                name="district"
+                                placeholder="Chọn quận"
                                 >
                                 {cityList.map((city) => 
                                     (<option 
@@ -167,8 +167,8 @@ function Profile() {
                             <div className={`${cx('input-add-wrapper')}`}>
                                 <select
                                 className={`${cx('input-add')} w-100`}
-                                name="gender"
-                                placeholder="Chọn giới tính"
+                                name="ward"
+                                placeholder="Chọn phường"
                                 >
                                 {cityList.map((city) => 
                                     (<option 

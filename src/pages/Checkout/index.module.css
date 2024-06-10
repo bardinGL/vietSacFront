@@ -1,0 +1,89 @@
+/* Cart */
+.product-list .product-wrapper:not(:last-child) {
+    margin-bottom: 30px;
+}
+.product-wrapper {
+    min-width: 100% ;
+}
+
+.product-img {
+    background-color: #FFD367;
+    width: 135px;
+    height: 135px;
+}
+
+.product-img img {
+    width: 135px;
+}
+
+.product-info {
+    min-width: 150px;
+}
+
+.product-info h5 {
+    font-weight: 700;
+}
+
+.small-red-box {
+    width: 110px;
+    height: 4px;
+    background-color: #9E1D26;
+ }
+
+.wrapper {
+    width: 100%;
+    background-color: transparent;
+}
+
+.order-product-section,
+.order-info-section {
+    padding: 20px 60px;
+    max-width: 50%;
+    width: 50vw;
+}
+
+.order-product-section {
+    background-color: #f7eeef;
+    position: fixed;
+    min-height: 100vh;
+    top: 120px;
+}
+
+.order-info-section {
+    background-color: #FFD367;
+}
+
+.product-list {
+    padding: 40px 0;
+    border-top: 2px #9E1D26 dashed;
+    border-bottom: 2px #9E1D26 dashed;
+}
+
+.bill-table-wrapper {
+    padding: 30px 0;
+}
+
+.bill-table {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.bill-table li:not(:last-child) {
+    padding-bottom: 8px;
+}
+
+.bill-table li:nth-last-child(2) {
+    border-bottom: 2px #9E1D26 dashed;
+    padding-bottom: 30px;
+}
+
+.bill-table li:nth-last-child(1) {
+    padding-top: 30px;
+    color: #9E1D26;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}

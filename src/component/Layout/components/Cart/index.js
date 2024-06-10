@@ -65,9 +65,11 @@ function Cart() {
                 </div>
                 {relatedProducts.map((product) => (<CartProductItem product={product}/>))}
                 <div className={`${cx('cart-footer')}`}>
-                    <button className={`btn-small prim-btn w-100 mb-3`}>
-                        THANH TOÁN NGAY
-                    </button>
+                    <a href='/checkout'>
+                        <button className={`btn-small prim-btn w-100 mb-3`}>
+                            THANH TOÁN NGAY
+                        </button>
+                    </a>
                     <button className={`btn-small sec-btn w-100`}>
                         XEM GIỎ HÀNG
                     </button>
