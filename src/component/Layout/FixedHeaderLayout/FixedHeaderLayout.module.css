@@ -1,5 +1,13 @@
 .wrapper {
-    width: 100%;
+    min-width: 100vh;
+}
+
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 .container {

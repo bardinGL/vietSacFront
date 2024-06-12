@@ -15,6 +15,7 @@ import styles from './index.module.css'
 const cx = classNames.bind(styles);
 
 function Confirm() {
+    const { content, embOption, next, prev } = useContext(ModalContext);
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
       setOpen(true);
@@ -35,6 +36,8 @@ function Confirm() {
           <div className={`${cx('confirm-modal')} d-flex justify-content-around align-items-center`}>
             <div>
                 <h2>Lưu thiết kế và thêm sản phẩm vào giỏ hàng?</h2>
+                <p>content {content.content}</p>
+                <p>embOption {embOption.embOption}</p>
                 <div className="mt-5">
                     <Button className={`btn-small sec-btn ${cx('btn-prev')} me-4`} onClick={handleClose}>
                         Hủy

@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 function FixedHeaderLayout({ children }) {
     return (
         <div className={cx('wrapper')}>
-            <div className={`position-fixed top-0 start-0 end-0`}>
+            <div className={`${cx('header-wrapper')}`}>
                 <Header isTransparent={false}/>
             </div>
             <div className={cx('container')}>
