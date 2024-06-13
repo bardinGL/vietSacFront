@@ -14,10 +14,22 @@ import chen from '../../assets/images/product/chen.png'
 import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
+import { getProductsAllAPI } from '../../api/shop';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Shop() {
+    const [productsAll, setProductsAll] = useState([]);
+
+    const fetchData = async() => {
+        setProductsAll(await getProductsAllAPI());
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
     const filterOptions = [
         {
             filterTitle: 'Mục đích',
@@ -36,17 +48,6 @@ function Shop() {
             ]
         }
     ];
-
-    const products = [
-        {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
-        {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
-        {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
-        {productName: 'Túi', productImg: tui, price: '325.000', discount: '50'},
-        {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
-        {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
-        {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
-        {productName: 'Túi', productImg: tui, price: '325.000', discount: '50'},
-    ]
 
     return (
         <div className={`${cx('wrapper')}`}>
@@ -80,7 +81,7 @@ function Shop() {
                     
                 </div>
                 <div className={`${cx('product-container')} d-flex flex-wrap`}>
-                    {products.map((product) => (<ProductItem product={product}/>))}
+                    {productsAll.map((product) => (<ProductItem product={product}/>))}
                 </div>
             </div>
         </div>

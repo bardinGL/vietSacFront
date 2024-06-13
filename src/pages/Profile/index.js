@@ -6,12 +6,13 @@ import userAvatar from '../../assets/images/user/userAvatar.png'
 import chen from '../../assets/images/product/chen.png'
 import ProductItem from '../../component/ProductItem';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Formik } from "formik";
 import { Button } from "antd";
 import { Input } from "formik-antd";
 import { floor } from 'lodash';
+import { getUserInfoAPI } from '../../api/site';
 
 const cx = classNames.bind(styles);
 
@@ -38,6 +39,16 @@ const CartProductItem = ({product}) => {
 }
 
 function Profile() {
+    const [userInfo, setUserInfo] = useState({});
+
+    const fetchData = async() => {
+        setUserInfo(await getUserInfoAPI());
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
     const cityList = [
         {
             value: 'HCM', text: 'TP Hồ Chí Minh'
@@ -46,16 +57,6 @@ function Profile() {
             value: 'HN', text: 'TP Hà Nội'
         }
     ]
-    const userInfo = {
-        avatar: userAvatar,
-        lastName: 'Le',
-        firstName: 'Chau',
-        dayDOB: 3,
-        monthDOB: 6,
-        yearDOB: 2003,
-        gender: 'female',
-        email: 'Chaule362003@gmail.com'
-    };
 
     const cart = [
         {productName: 'Chén', img: chen, price: '325.000', discount: '0', quant: 1},
@@ -116,24 +117,24 @@ function Profile() {
                         <div className='w-100 d-flex justify-content-between'>
                             <div className={`${cx('input-name-wapper')} ${errors.lastName && "input-error"} d-flex flex-column`}>
                                 <label className={cx('input-title')}>Họ *</label>
-                                <Input name={"lastName"}  className={cx('info-input')} placeholder="Nhập họ của bạn"/>
+                                <Input name={"lastName"}  className={cx('info-input')} placeholder="Nhập họ của bạn" value={userInfo.lastName}/>
                                 <p className={cx('error-feedback')}>{errors.lastName}</p>
                             </div>
                             <div className={`${cx('input-name-wapper')} ${errors.firstName && "input-error"} d-flex flex-column`}>
                                 <label className={cx('input-title')}>Tên *</label>
-                                <Input name={"firstName"}  className={cx('info-input')} placeholder="Nhập tên của bạn"/>
+                                <Input name={"firstName"}  className={cx('info-input')} placeholder="Nhập tên của bạn" value={userInfo.firstName}/>
                                 <p className={cx('error-feedback')}>{errors.firstName}</p>
                             </div>
                             <div className={`${cx('input-name-wapper')} ${errors.firstName && "input-error"} d-flex flex-column`}>
                                 <label className={cx('input-title')}>Số điện thoại</label>
-                                <Input name={"firstName"}  className={cx('info-input')} placeholder="Nhập tên của bạn"/>
+                                <Input name={"phone"}  className={cx('info-input')} placeholder="Nhập số điện thoại của bạn" value={userInfo.phone}/>
                                 <p className={cx('error-feedback')}>{errors.firstName}</p>
                             </div>
                         </div>
                         <div className='w-100 d-flex justify-content-between'>
                             <div className={`${cx('input-name-wapper')} ${errors.lastName && "input-error"} w-100 d-flex flex-column`}>
                                 <label className={cx('input-title')}>Địa chỉ *</label>
-                                <Input name={"lastName"}  className={cx('info-input')} placeholder="Nhập họ của bạn"/>
+                                <Input name={"address"}  className={cx('info-input')} placeholder="Nhập dịa chỉ của bạn" value={userInfo.address}/>
                                 <p className={cx('error-feedback')}>{errors.lastName}</p>
                             </div>
                         </div>
@@ -186,12 +187,12 @@ function Profile() {
                     <div className='w-100 d-flex justify-content-between'>
                         <div className={`${cx('input-account-wrapper')} ${errors.lastName && "input-error"} d-flex flex-column`}>
                             <label className={cx('input-title')}>Email *</label>
-                            <Input name={"lastName"}  className={cx('account-input')} placeholder="Nhập họ của bạn"/>
+                            <Input name={"email"}  className={cx('account-input')} placeholder="Nhập email của bạn" value={userInfo.email}/>
                             <p className={cx('error-feedback')}>{errors.lastName}</p>
                         </div>
                         <div className={`${cx('input-account-wrapper')} ${errors.firstName && "input-error"} d-flex flex-column`}>
                             <label className={cx('input-title')}>Mật khẩu *</label>
-                            <Input name={"firstName"}  className={cx('account-input')} placeholder="Nhập tên của bạn"/>
+                            <Input name={"password"}  className={cx('account-input')} placeholder="Nhập mật khẩu của bạn" value={userInfo.password}/>
                             <p className={cx('error-feedback')}>{errors.firstName}</p>
                         </div>
                     </div>
