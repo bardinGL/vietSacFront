@@ -19,7 +19,7 @@ function Header({isTransparent}) {
     const navigationOption = [ 
         { title: 'home', link: '/home', current: true},
         { title: 'sản phẩm', link: '/shop', current: false},
-        { title: 'gallery', link: '#', current: false},
+        { title: 'gallery', link: '/home#gallery', current: false},
         { title: 'về chúng tôi', link: '#', current: false},
     ];
 

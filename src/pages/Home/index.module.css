@@ -35,6 +35,31 @@
     color: #9E1D26;
     font-weight: 400;
 }
+
+.section-gallery-wrapper {
+    /* padding: 100px; */
+    border-top: #1D382A 100px solid;
+    border-bottom: #1D382A 100px solid;
+    border-left: #2b4134 100px solid;
+    border-right: #2b4134 100px solid;
+}
+
+.section-gallery {
+    padding: 40px 160px;
+    background-color:#F0E0D3;
+    width: 100%;
+    height: 3271px;
+}
+
+.section-gallery h1 {
+    font-size: 100px;
+    color: #9E1D26;
+    text-transform: capitalize;
+    text-align: center;
+    font-family: header-regular-font !important;
+    margin-bottom: 72px;
+}
+
 .category-title {
     background-image: url('../../assets/images/sectionTitleBackground.png');
     padding: 35px 0;
