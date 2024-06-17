@@ -1,9 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './index.module.css';
 import CheckoutContext from "./CheckoutContext";
-
-import chen from '../../assets/images/product/chen.png'
-import ProductItem from '../../component/ProductItem';
+import $ from 'jquery';
 
 import { useState, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
@@ -54,85 +52,6 @@ function Checkout() {
     useEffect(() => {
         fetchData();
     }, [])
-
-    const cityList = [
-        {
-            value: 'Thành phố Hồ Chí Minh', text: 'Thành phố Hồ Chí Minh'
-        }
-    ]
-    const districtList = [
-        {
-            value: 'Thành phố Thủ Đức', text: 'Thành phố Thủ Đức'
-        },
-        {
-            value: 'Quận 1', text: 'Quận 1'
-        },
-        {
-            value: 'Quận 3', text: 'Quận 3'
-        },
-        {
-            value: 'Quận 4', text: 'Quận 4'
-        },
-        {
-            value: 'Quận 5', text: 'Quận 5'
-        },
-        {
-            value: 'Quận 6', text: 'Quận 6'
-        },
-        {
-            value: 'Quận 7', text: 'Quận 7'
-        },
-        {
-            value: 'Quận 8', text: 'Quận 8'
-        },
-        {
-            value: 'Quận 10', text: 'Quận 10'
-        },
-        {
-            value: 'Quận 11', text: 'Quận 11'
-        },
-        {
-            value: 'Quận 12', text: 'Quận 12'
-        },
-        {
-            value: 'Quận Tân Bình', text: 'Quận Tân Bình'
-        },
-        {
-            value: 'Quận Bình Tân', text: 'Quận Bình Tân'
-        },
-        {
-            value: 'Quận Bình Thạnh', text: 'Quận Bình Thạnh'
-        },
-        {
-            value: 'Quận Tân Phú', text: 'Quận Tân Phú'
-        },
-        {
-            value: 'Quận Gò Vấp', text: 'Quận Gò Vấp'
-        },
-        {
-            value: 'Bình Chánh', text: 'Huyện Bình Chánh'
-        },
-        {
-            value: 'Huyện Hóc Môn', text: 'Huyện Hóc Môn'
-        },
-        {
-            value: 'Huyện Cần Giờ', text: 'Huyện Cần Giờ'
-        },
-        {
-            value: 'Huyện Củ Chi', text: 'Huyện Củ Chi'
-        },
-        {
-            value: 'Huyện Nhà bè', text: 'Huyện Nhà bè'
-        },
-    ]
-    const wardList = [
-        {
-            value: 'HCM', text: 'TP Hồ Chí Minh'
-        },
-        {
-            value: 'HN', text: 'TP Hà Nội'
-        }
-    ]
 
     const shippingOptions = [
         {
@@ -252,10 +171,9 @@ function Checkout() {
                                         <select
                                         name="city"
                                         placeholder="TỈNH/THÀNH"
+                                        id="city"
                                         >
-                                        {cityList.map((city) => 
-                                            (<option
-                                            value={city.value}>{city.text}</option>))}
+                                        <option value="0">Tỉnh Thành</option>
                                         </select>
                                     </div>
                                     <div className={`${cx('input-col')} d-flex justify-content-between my-3`}>
@@ -263,20 +181,18 @@ function Checkout() {
                                             <select
                                             name="district"
                                             placeholder="QUẬN/HUYỆN"
+                                            id="district"
                                             >
-                                            {districtList.map((district) => 
-                                                (<option
-                                                value={district.value}>{district.text}</option>))}
+                                            <option value="0">Quận Huyện</option>
                                             </select>
                                         </div>
                                         <div className={`${cx('input-select')}`}>
                                             <select
                                             name="ward"
                                             placeholder="XÃ/PHƯỜNG"
+                                            id="ward"
                                             >
-                                            {wardList.map((ward) => 
-                                                (<option
-                                                value={ward.value}>{ward.text}</option>))}
+                                            <option value="0">Phường Xã</option>
                                             </select>
                                         </div>
                                     </div>
@@ -328,9 +244,6 @@ function Checkout() {
                 </div>
             </div>
         );}}
-        <Helmet>
-            
-        </Helmet>
         </Formik>
     )
 }

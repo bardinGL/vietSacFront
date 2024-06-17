@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Steps } from "antd";
 import { Provider } from "./CheckoutContext";
 import Checkout from "./Checkout";
 import Overview from "./Overview"
 
 import './index.module.css'
+import { getUserInfoAPI } from "../../api/site";
 
 const checkoutInitialState = {
   email: "",
@@ -32,6 +33,22 @@ const renderStep = (step) => {
 };
 
 const CheckoutPage = () => {
+    const [userInfo, setUserInfo] = useState({});
+
+    const fetchData = async() => {
+        setUserInfo(await getUserInfoAPI());
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+    checkoutInitialState.email = userInfo.email;
+    checkoutInitialState.firstName = userInfo.firstName;
+    checkoutInitialState.lastName = userInfo.lastName;
+    checkoutInitialState.address = userInfo.address;
+    checkoutInitialState.phone = userInfo.phone;
+
     const [checkout, setCheckout] = useState(checkoutInitialState);
     const [currentStep, setCurrentStep] = useState(0);
 
