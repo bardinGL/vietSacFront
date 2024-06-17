@@ -5,12 +5,13 @@ import CheckoutContext from "./CheckoutContext";
 import chen from '../../assets/images/product/chen.png'
 import ProductItem from '../../component/ProductItem';
 
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Formik } from "formik";
 import { Button, Radio, Space } from "antd";
 import { Input } from "formik-antd";
 import { floor } from 'lodash';
+import { getUserCartAPI, getUserInfoAPI } from '../../api/site';
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +25,7 @@ const CartProductItem = ({product}) => {
     <div className={`${cx('product-wrapper')} d-flex justify-content-between`}>
         <div className='d-flex'>
             <div className={`${cx('product-img')}`}>
-                <img src={product.img}/>
+                <img src={product.productImg}/>
             </div>
             <div className='ms-3'> 
                 <h5>{product.productName}</h5>
@@ -42,21 +43,87 @@ const CartProductItem = ({product}) => {
 }
 
 function Checkout() {
+    const [cart, setCart] = useState([]);
+    const [userInfo, setUserInfo] = useState({});
+
+    const fetchData = async() => {
+        setCart(await getUserCartAPI());
+        setUserInfo(await getUserInfoAPI());
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
     const cityList = [
         {
-            value: 'HCM', text: 'TP Hồ Chí Minh'
-        },
-        {
-            value: 'HN', text: 'TP Hà Nội'
+            value: 'Thành phố Hồ Chí Minh', text: 'Thành phố Hồ Chí Minh'
         }
     ]
     const districtList = [
         {
-            value: 'HCM', text: 'TP Hồ Chí Minh'
+            value: 'Thành phố Thủ Đức', text: 'Thành phố Thủ Đức'
         },
         {
-            value: 'HN', text: 'TP Hà Nội'
-        }
+            value: 'Quận 1', text: 'Quận 1'
+        },
+        {
+            value: 'Quận 3', text: 'Quận 3'
+        },
+        {
+            value: 'Quận 4', text: 'Quận 4'
+        },
+        {
+            value: 'Quận 5', text: 'Quận 5'
+        },
+        {
+            value: 'Quận 6', text: 'Quận 6'
+        },
+        {
+            value: 'Quận 7', text: 'Quận 7'
+        },
+        {
+            value: 'Quận 8', text: 'Quận 8'
+        },
+        {
+            value: 'Quận 10', text: 'Quận 10'
+        },
+        {
+            value: 'Quận 11', text: 'Quận 11'
+        },
+        {
+            value: 'Quận 12', text: 'Quận 12'
+        },
+        {
+            value: 'Quận Tân Bình', text: 'Quận Tân Bình'
+        },
+        {
+            value: 'Quận Bình Tân', text: 'Quận Bình Tân'
+        },
+        {
+            value: 'Quận Bình Thạnh', text: 'Quận Bình Thạnh'
+        },
+        {
+            value: 'Quận Tân Phú', text: 'Quận Tân Phú'
+        },
+        {
+            value: 'Quận Gò Vấp', text: 'Quận Gò Vấp'
+        },
+        {
+            value: 'Bình Chánh', text: 'Huyện Bình Chánh'
+        },
+        {
+            value: 'Huyện Hóc Môn', text: 'Huyện Hóc Môn'
+        },
+        {
+            value: 'Huyện Cần Giờ', text: 'Huyện Cần Giờ'
+        },
+        {
+            value: 'Huyện Củ Chi', text: 'Huyện Củ Chi'
+        },
+        {
+            value: 'Huyện Nhà bè', text: 'Huyện Nhà bè'
+        },
     ]
     const wardList = [
         {
@@ -86,14 +153,6 @@ function Checkout() {
         {
             value: 'bank', text: 'Thanh toán bằng ngân hàng'
         }
-    ]
-
-    const cart = [
-        {productName: 'Chén Chén Chén Chén Chén Chén Chén Chén', img: chen, price: '325.000', discount: '20', quant: 10},
-        {productName: 'Chén', img: chen, price: '325.000', discount: '10', quant: 10},
-        {productName: 'Chén', img: chen, price: '325.000', discount: '10', quant: 10},
-        {productName: 'Chén', img: chen, price: '325.000', discount: '10', quant: 10},
-        {productName: 'Chén', img: chen, price: '325.000', discount: '10', quant: 10},
     ]
 
     const shipCost = 30000;
@@ -164,29 +223,29 @@ function Checkout() {
                                 <div className={`${cx('ship-info-inputs')} py-4`}>
                                     <div className={`${cx('input-ship-wrapper')} ${errors.lastName && "input-error"} d-flex flex-column`}>
                                         <label className={cx('input-title')}>Email *</label>
-                                        <Input name={"email"} className={cx('info-input')} placeholder="Nhập email của bạn"/>
+                                        <Input name={"email"} className={cx('info-input')} placeholder="Nhập email của bạn" value={userInfo.email}/>
                                         <p className={cx('error-feedback')}>{errors.email}</p>
                                     </div> 
                                     <div className={`${cx('input-col')} d-flex justify-content-between`}>
                                         <div className={`${cx('input-ship-wrapper')} ${errors.lastName && "input-error"} d-flex flex-column`}>
                                             <label className={cx('input-title')}>Họ *</label>
-                                            <Input name={"lastName"} className={cx('info-input')} placeholder="Nhập họ của bạn"/>
+                                            <Input name={"lastName"} className={cx('info-input')} placeholder="Nhập họ của bạn" value={userInfo.lastName}/>
                                             <p className={cx('error-feedback')}>{errors.fisrtName}</p>
                                         </div>
                                         <div className={`${cx('input-ship-wrapper')} ${errors.lastName && "input-error"} d-flex flex-column`}>
                                             <label className={cx('input-title')}>Tên *</label>
-                                            <Input name={"firstName"} className={cx('info-input')} placeholder="Nhập tên của bạn"/>
+                                            <Input name={"firstName"} className={cx('info-input')} placeholder="Nhập tên của bạn" value={userInfo.firstName}/>
                                             <p className={cx('error-feedback')}>{errors.lastName}</p>
                                         </div>
                                     </div>
                                     <div className={`${cx('input-ship-wrapper')} ${errors.lastName && "input-error"} d-flex flex-column`}>
                                         <label className={cx('input-title')}>Địa chỉ *</label>
-                                        <Input name={"address"} className={cx('info-input')} placeholder="Nhập địa chỉ của bạn"/>
+                                        <Input name={"address"} className={cx('info-input')} placeholder="Nhập địa chỉ của bạn" value={userInfo.address}/>
                                         <p className={cx('error-feedback')}>{errors.address}</p>
                                     </div>
                                     <div className={`${cx('input-ship-wrapper')} ${errors.lastName && "input-error"} d-flex flex-column`}>
                                         <label className={cx('input-title')}>Số điện thoại *</label>
-                                        <Input name={"phone"} className={cx('info-input')} placeholder="Nhập số điện thoại của bạn"/>
+                                        <Input name={"phone"} className={cx('info-input')} placeholder="Nhập số điện thoại của bạn" value={userInfo.phone}/>
                                         <p className={cx('error-feedback')}>{errors.phone}</p>
                                     </div>
                                     <div className={`${cx('input-select')} my-2`}>
@@ -269,6 +328,9 @@ function Checkout() {
                 </div>
             </div>
         );}}
+        <Helmet>
+            
+        </Helmet>
         </Formik>
     )
 }

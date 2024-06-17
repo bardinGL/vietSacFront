@@ -13,8 +13,9 @@
 
 .product-img {
     background-color: #FFD367;
-    width: 135px;
-    height: 135px;
+    padding: 5px;
+    min-width: 135px;
+    min-height: 135px;
 }
 
 .product-img img {

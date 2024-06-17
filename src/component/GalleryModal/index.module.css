@@ -1,0 +1,43 @@
+.wrapper {
+
+}
+
+.paragraph-img {
+    width: 745px;
+    height: 496px;
+    box-shadow: -12px -12px 0px 0px #264234;
+}
+
+.paragraph-title {
+    color: #264234;
+    font-style: italic;
+    font-weight: 800;
+}
+
+blockquote {
+    color: #264234;
+    font-size: 20px;
+    font-family: regular-font;
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+blockquote:before {
+  content: open-quote;
+}
+
+blockquote:after {
+  content: close-quote;
+}
+
+blockquote:before,
+blockquote:after {
+  display: inline-block;
+  vertical-align: bottom;
+  color: #264234;
+  font-size: 4em;
+  top: 0.2em;
+  left: 0.01em;
+  position: relative;
+}

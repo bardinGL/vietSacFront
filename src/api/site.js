@@ -7,7 +7,7 @@ import axiosSite from "./axiosSite.js";
 const END_POINT = {
     USER_INFO: "get-user-info",
     HOT_DEALS: "get-hot-deals",
-    PRODUCTS_ALL: "get-products-all"
+    USER_CART: "get-user-cart"
 }
 export const getUserInfoAPI = () => {
     // return axiosSite.get(`${END_POINT.HOME}`)
@@ -16,4 +16,8 @@ export const getUserInfoAPI = () => {
 
 export const getProductsHotDealsAPI = () => {
     return axiosSite.get(`${END_POINT.HOT_DEALS}`);
+}
+
+export const getUserCartAPI = () => {
+    return axiosSite.get(`${END_POINT.USER_CART}`);
 }

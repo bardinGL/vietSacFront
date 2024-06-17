@@ -5,12 +5,14 @@ import Button from '@material-ui/core/Button';
 
 import tui from '../../../../assets/images/product/tui.png'
 import trash from '../../../../assets/icon/trash.svg'
-import cart from '../../../../assets/icon/cart.svg'
+import cartIcon from '../../../../assets/icon/cart.svg'
 import close from '../../../../assets/icon/closeRed.svg'
 
 import classNames from 'classnames/bind';
 import styles from './index.module.css';
+import { useEffect, useState } from 'react';
 import { floor } from 'lodash';
+import { getUserCartAPI } from '../../../../api/site';
 
 const cx = classNames.bind(styles);
 
@@ -26,20 +28,21 @@ function Cart() {
         setOpen(newOpen);
     };
 
-    const relatedProducts = [
-        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
-        {productName: 'Ghế', img: tui, price: '325.000', discount: '50', quant: '10'},
-        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
-        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
-        {productName: 'Ghế', img: tui, price: '325.000', discount: '50', quant: '10'},
-        {productName: 'Túi xách thổ cẩm họa tiết voi', img: tui, price: '325.000', discount: '0', quant: '10'},
-    ]
+    const [cart, setCart] = useState([]);
+
+    const fetchData = async() => {
+        setCart(await getUserCartAPI());
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
 
     const CartProductItem = ({product}) => {
         return (
         <div className={`${cx('product-wrapper')} d-flex justify-content-between`}>
             <div className={`${cx('product-img')}`}>
-                <img src={product.img}/>
+                <img src={product.productImg}/>
             </div>
             <div className={`${cx('product-info')} d-flex flex-column`}>
                 <h4>{product.productName}</h4>
@@ -63,7 +66,7 @@ function Cart() {
                     <h2 className={`mb-2`}>Giỏ hàng</h2>
                     <div className={`${cx('small-red-box')}`}></div>
                 </div>
-                {relatedProducts.map((product) => (<CartProductItem product={product}/>))}
+                {cart.map((product) => (<CartProductItem product={product}/>))}
                 <div className={`${cx('cart-footer')}`}>
                     <a href='/checkout'>
                         <button className={`btn-small prim-btn w-100 mb-3`}>
@@ -81,7 +84,7 @@ function Cart() {
     return (
         <div>
             <Button onClick={toggleDrawer(true)}>
-                <img className={`${cx('header-icon')}`} src={cart} alt="Cart"/>
+                <img className={`${cx('header-icon')}`} src={cartIcon} alt="Cart"/>
             </Button>
             <Drawer open={open} anchor={'right'}  onClose={(_, reason) => reason === "backdropClick" && setOpen(false)}>
                 {CartProductList}

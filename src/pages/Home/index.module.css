@@ -127,3 +127,21 @@
     padding: 80px 20px;
     background-color: #F8EEEE;
 }
+
+.section-modal {
+    width: 1232px;
+    height: 856px;
+    padding: 100px 50px;
+    border-radius: 50px;
+}
+
+.close-modal-btn {
+    width: 26.87px;
+    height: 28.87px;
+    top: 50px;
+    right: 50px;
+}
+
+.close-modal-btn:hover {
+    cursor: pointer;
+}

@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './index.module.css';
 
 import ProductCard from '../../component/ProductCard';
+import iconClose from '../../assets/icon/closeRed.svg'
 
 import homeBanner from '../../assets/images/homeBanner.png'
 
@@ -27,18 +28,22 @@ import chen from '../../assets/images/product/chen.png'
 import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
+
+import danDo from '../../assets/images/galleryContent/danDo.png'
 import { useEffect, useState } from 'react';
 import { getProductsHotDealsAPI } from '../../api/site';
+import { Dialog } from '@material-ui/core';
+import GalleryModal from '../../component/GalleryModal';
 
 
 const cx = classNames.bind(styles);
 
-const Mask = ({ gallery }) => {
+const Mask = ({ gallery,handleOpenModal }) => {
     const maskImg = new Image();
     maskImg.src = gallery.mask;
 
     return (
-        <div className={`${cx('gallery-img-wrapper')} bg-image position-absolute`} style={gallery.location}>
+        <div className={`${cx('gallery-img-wrapper')} bg-image position-absolute`} style={gallery.location} onClick={handleOpenModal}>
             <img src={gallery.galleryImg} style={gallery.mask} />
             <div class="mask" style={gallery.mask}></div>
         </div>
@@ -61,6 +66,17 @@ function Home() {
         {title: 'đồ thổ cẩm', categoryImg: thocamCategory},
         {title: 'đồ đan lát', categoryImg: danlatCategory},
     ]
+
+    const [openModal, setOpenModal] = useState(false);
+ 
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    };
+ 
+    const handleOpenModal = () => {
+        setOpenModal(true);
+    };
+
     return (
         <div className={`${cx('wrapper')}`}>
             <div className={`${cx('section-banner')}`}>
@@ -96,22 +112,33 @@ function Home() {
                 <div className={`${cx('section-gallery')}`}>
                     <h1>gallery</h1>
                     <div className='position-relative'>
-                        <Mask gallery={gallery1}></Mask>
-                        <Mask gallery={gallery2}></Mask>
-                        <Mask gallery={gallery3}></Mask>
-                        <Mask gallery={gallery4}></Mask>
-                        <Mask gallery={gallery5}></Mask>
-                        <Mask gallery={gallery6}></Mask>
-                        <Mask gallery={gallery7}></Mask>
-                        <Mask gallery={gallery8}></Mask>
-                        <Mask gallery={gallery9}></Mask>
-                        <Mask gallery={gallery10}></Mask>
-                        <Mask gallery={gallery11}></Mask>
-                        <Mask gallery={gallery12}></Mask>
-                        <Mask gallery={gallery13}></Mask>
+                        <Mask gallery={gallery1} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery2} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery3} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery4} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery5} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery6} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery7} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery8} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery9} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery10} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery11} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery12} handleOpenModal={handleOpenModal} ></Mask>
+                        <Mask gallery={gallery13} handleOpenModal={handleOpenModal} ></Mask>
                     </div>
                 </div>
             </div>
+            <Dialog  
+            open={openModal}
+            onClose={handleCloseModal}
+            maxWidth={'lg'}
+            >
+                 <div className={`${cx('section-modal')} position-relative`}>
+                    <img src={iconClose} className={`${cx('close-modal-btn')} position-absolute`} onClick={handleCloseModal}/>
+                    <GalleryModal title={`Làng nghề đan đó 200 tuổi ở Hưng Yên`} imgParagraph={danDo} paragraphs={[`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centurie`,`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centurie`]}/>
+                </div>
+                
+            </Dialog >
         </div>
     )
 }
