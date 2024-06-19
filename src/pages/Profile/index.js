@@ -144,12 +144,9 @@ function Profile() {
                                 className={`${cx('input-add')} w-100`}
                                 name="city"
                                 placeholder="Chọn thành phố"
+                                id="city"
                                 >
-                                {cityList.map((city) => 
-                                    (<option 
-                                    className={`${cx('input-add')}`}
-                                    value={city.value}>{city.text}</option>))}
-                                
+                                <option value="0">Tỉnh Thành</option>
                                 </select>
                             </div>
                             <div className={`${cx('input-add-wrapper')}`}>
@@ -157,11 +154,9 @@ function Profile() {
                                 className={`${cx('input-add')} w-100`}
                                 name="district"
                                 placeholder="Chọn quận"
+                                id="district"
                                 >
-                                {cityList.map((city) => 
-                                    (<option 
-                                    className={`${cx('input-add')}`}
-                                    value={city.value}>{city.text}</option>))}
+                                <option value="0">Quận Huyện</option>
                                 
                                 </select>
                             </div>
@@ -170,12 +165,10 @@ function Profile() {
                                 className={`${cx('input-add')} w-100`}
                                 name="ward"
                                 placeholder="Chọn phường"
+                                id="ward"
                                 >
-                                {cityList.map((city) => 
-                                    (<option 
-                                    className={`${cx('input-add')}`}
-                                    value={city.value}>{city.text}</option>))}
-                                
+                                <option value="0">Phường Xã</option>
+                                <option value="0">Phường Xã</option>
                                 </select>
                             </div>
                         </div>

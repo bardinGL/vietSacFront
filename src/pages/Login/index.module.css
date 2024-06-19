@@ -87,3 +87,7 @@ input:-webkit-autofill:active {
     font-family: medium-font !important;
     text-align: end;
 }
+
+.signup-option:hover {
+    color: #000000;
+}

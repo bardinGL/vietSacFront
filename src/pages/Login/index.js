@@ -21,15 +21,17 @@ const Login = () => {
                         <div className='col'>
                             <div className={`row`}>
                                 <label className={cx('input-title')}>email/sđt</label>
-                                <input className={cx('login-email')} type='email' placeholder='Nhập email của bạn'/>
+                                <input className={cx('login-email')} type='email' name='email' placeholder='Nhập email của bạn'/>
                             </div>
                             <div className={`row mt-4`}>
                                 <label className={cx('input-title')}>mật khẩu</label>
-                                <input className={cx('login-password')} type='password' placeholder='Nhập mật khẩu của bạn'/>
+                                <input className={cx('login-password')} type='password' name='password' placeholder='Nhập mật khẩu của bạn'/>
                             </div>
-                            <button className={`${cx('btn-login')} float-end`}>
-                                Đăng nhập
-                            </button>
+                            <a href='/home'>
+                                <button className={`${cx('btn-login')} float-end`}>
+                                    Đăng nhập
+                                </button>
+                            </a>
                         </div>
                     </div>
                     <a href='/signup' className={`${cx('signup-option')}`}>
