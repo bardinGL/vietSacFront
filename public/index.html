@@ -14,6 +14,21 @@
     <script src="https://esgoo.net/scripts/jquery.js"></script>
     <title>Việt Sắc</title>
   </head>
+  <style>
+    body {
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+  </style>
   <body style="min-height:100%;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

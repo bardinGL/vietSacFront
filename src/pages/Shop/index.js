@@ -34,20 +34,40 @@ function Shop() {
         {
             filterTitle: 'Mục đích',
             options: [
-                {optionTitle: 'Dùng hàng ngày', chosing: false},
-                {optionTitle: 'Dùng trang trí', chosing: true},
+                'Dùng hàng ngày',
+                'Dùng trang trí'
             ]
         },
         {
             filterTitle: 'Tên thương hiệu',
             options: [
-                {optionTitle: 'Gốm Chu Đậu', chosing: false},
-                {optionTitle: 'Gốm Bát Tràng', chosing: true},
-                {optionTitle: 'Gốm Bàu Trúc', chosing: false},
-                {optionTitle: 'Gốm Biên Hòa', chosing: false},
+                'Gốm Chu Đậu',
+                'Gốm Bát Tràng',
+                'Gốm Bàu Trúc',
+                'Gốm Biên Hòa'
             ]
         }
     ];
+
+    const initalFilter = filterOptions.map((filter) => filter.filterTitle).reduce(
+        (accum, filterAtt) => ({...accum, [filterAtt]: 'all'}),{});
+
+    const [filter, setFilter] = useState(initalFilter);
+
+    const handleAddFilter = (e, title) => {
+        Array.from(e.target.parentNode.childNodes).forEach(element => {
+            element.classList.remove(cx('option-chosen'));
+        });
+
+        if(!e.target.classList.contains(cx('option-chosen'))) {
+            e.target.classList.add(cx('option-chosen'));
+        }
+        
+        setFilter({
+            ...filter,
+            [title]: e.target.innerText
+        });
+    }
 
     return (
         <div className={`${cx('wrapper')}`}>
@@ -57,7 +77,10 @@ function Shop() {
                     <h1>Sản phẩm</h1>
                 </div>
                 <div className={cx('breadcrumb')}>
-                    <Breadcrumb pageTitle = 'Đồ gốm'/>
+                    <Breadcrumb pages = {[
+                        {title: 'Sản phẩm', path: '/shop'}
+                    ]}
+                    filter = {filter}/>
                 </div>
             </div>
             <div className={`${cx('page-title')}`}>
@@ -73,7 +96,7 @@ function Shop() {
                             </div>
                             <div className={`${cx('filter-options')} pt-3`}>
                                 {filter.options.map((option) => (
-                                <p className={`${option.chosing ? cx('option-chosen') : ''} mb-2`}>{option.optionTitle}</p>))}
+                                <p className={`${option.chosing ? cx('option-chosen') : ''} mb-2`} onClick={(e) => handleAddFilter(e, filter.filterTitle)}>{option}</p>))}
                                 
                             </div>
                         </div>

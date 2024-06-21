@@ -58,6 +58,11 @@ body {
     src: url("../../assets/fonts/be-vietnam-pro/BeVietnamPro-Thin.ttf");
 }
 
+@font-face {
+    font-family: filter-options-font;
+    src: url("../../assets/fonts/be-vietnam-pro/BeVietnamPro-Light.ttf");
+}
+
 /*---Headline---*/
 h1, h2, h3, h4, h5, h6 {
 	font-family: bold-font !important;

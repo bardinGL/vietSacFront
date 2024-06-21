@@ -65,7 +65,7 @@
 .filter-options p{
     color: rgba(38, 66, 52, 0.50);
     font-size: 24px;
-    font-family: breadcrumb-font !important;
+    font-family: filter-options-font !important;
 }
 
 .filter-options p:hover {

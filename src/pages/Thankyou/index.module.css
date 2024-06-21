@@ -1,0 +1,15 @@
+.wrapper {
+    width: 100vw;
+    height: calc(100vh - 120px);
+}
+
+.thankyou-title {
+    color: #9E1D26;
+    font-size: 50px;
+}
+
+.thankyou-des {
+    color: #264234;
+    font-size: 25px;
+    margin-bottom: 0;
+}

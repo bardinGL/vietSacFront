@@ -11,6 +11,7 @@ import NoFooterLayout from "../component/Layout/NoFooterLayout";
 import Profile from "../pages/Profile";
 import FixedHeaderLayout from "../component/Layout/FixedHeaderLayout";
 import Checkout from "../pages/Checkout";
+import Thankyou from "../pages/Thankyou";
 
 const publicRoutes = [
     { path: '/', component: Login, name: 'Login', layout: NoCompLayout},
@@ -19,7 +20,8 @@ const publicRoutes = [
     { path: '/user', component: Profile, name: 'Profile', layout: NoFooterLayout},
     { path: '/shop', component: Shop, name: 'Shop', layout: NoFooterLayout},
     { path: '/shop/:id', component: ProductDetail, name: 'Product Detail', layout: NoFooterLayout},
-    { path: '/checkout', component: Checkout, name: 'Product Detail', layout: FixedHeaderLayout},
+    { path: '/checkout', component: Checkout, layout: FixedHeaderLayout},
+    { path: '/thankyou', component: Thankyou, layout: NoFooterLayout},
 ];
 
 const privateRoutes = [];
