@@ -5,20 +5,33 @@ import Carousel from "react-elastic-carousel";
 import classNames from 'classnames/bind';
 import styles from './index.module.css';
 
+import logo from '../../assets/logo/logo.png'
 import chen from '../../assets/images/product/chen.png'
 import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
 
 import iconClose from '../../assets/icon/closeRed.svg'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TabsGallery from "../../component/TabsGallery";
 import ProductModal from "../../component/ProductModal";
 import RelatedProductItem from "../../component/RelatedProductItem";
+import { getProductDetailAPI } from "../../api/shop";
 
 const cx = classNames.bind(styles);
 
 function ProductDetail() {
+    const [product, setProduct] = useState({});
+
+    const fetchData = async() => {
+        setProduct(await getProductDetailAPI());
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+    console.log(product.productImgs);
     const relatedProducts = [
         {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
         {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
@@ -68,10 +81,10 @@ function ProductDetail() {
     return (
         <div className={`${cx('wrapper')}`}>
             <div className={`${cx('section-product-detail')} d-flex justify-content-around`}>
-                <TabsGallery imgGalleries={[chen, ghe, tui, vi]}/>
+                <TabsGallery imgGalleries={product.productImgs || [logo]}/>
                 <div className={`${cx('product-detail')}`}>
                     <div className={`${cx('product-title')}`}>
-                        <h1>tui xach tho cam</h1>
+                        <h1>{product.productName}</h1>
                     </div>
                     <div className={`${cx('small-red-box')}`}></div>
                     <div className={`${cx('product-tabs')} d-flex justify-content-between mt-4`}>
@@ -80,31 +93,21 @@ function ProductDetail() {
                     </div>
                     <div className={`${cx('tabs')} d-flex flex-column`}>
                         <div className={`${cx('tab-option')}`} id='des-tab'>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p>{product.description}</p>
                         </div>
                         <div className={`${cx('tab-option')}`} id='size-tab'>
                             <ul className={`${cx('size-table')}`}>
-                                <li className='d-flex justify-content-between'>
-                                    <span className={`${cx('size-title')}`}>Chiều dài</span>
-                                    <span className={`${cx('size-value')}`}>50 cm</span>
-                                </li>
-                                <li className='d-flex justify-content-between'>
-                                    <span className={`${cx('size-title')}`}>Chiều dài</span>
-                                    <span className={`${cx('size-value')}`}>50 cm</span>
-                                </li>
-                                <li className='d-flex justify-content-between'>
-                                    <span className={`${cx('size-title')}`}>Chiều dài</span>
-                                    <span className={`${cx('size-value')}`}>50 cm</span>
-                                </li>
-                                <li className='d-flex justify-content-between'>
-                                    <span className={`${cx('size-title')}`}>Chiều dài</span>
-                                    <span className={`${cx('size-value')}`}>50 cm</span>
-                                </li>
+                                {product.sizeInfo ? product.sizeInfo.map((element) => (
+                                    <li className='d-flex justify-content-between'>
+                                        <span className={`${cx('size-title')}`}>{element.title}</span>
+                                        <span className={`${cx('size-value')}`}>{element.value}</span>
+                                    </li>
+                                )) : "null"}
                             </ul>
                         </div>
                     </div>
                     <div className={`${cx('product-price')}`}>
-                        <h2>350.000 VND</h2>
+                        <h2>{product.price} VND</h2>
                     </div>
                     <div className={`${cx('product-quant')} my-4`}>
                         <label>Số lượng</label>

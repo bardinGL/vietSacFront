@@ -14,9 +14,11 @@ function ProductCard({product}) {
 
     return (
         <div className={`${cx('wrapper')}`}>
-            <div className={`${cx('section-product-img')}`}>
-                <img src={product.productImg}/>
-            </div>
+            <a href={`/shop/${product.productName}`}>
+                <div className={`${cx('section-product-img')}`}>
+                        <img src={product.productImg}/>
+                </div>
+            </a>
             <div className={`${cx('section-product-info')}`}>
                 <div className={`${cx('product-name')}`}>
                     <p>{product.productName}</p>

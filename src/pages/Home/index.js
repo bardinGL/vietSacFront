@@ -62,9 +62,9 @@ function Home() {
     }, [])
     
     const categoryOptions = [
-        {title: 'đồ gốm', categoryImg: gomCategory},
-        {title: 'đồ thổ cẩm', categoryImg: thocamCategory},
-        {title: 'đồ đan lát', categoryImg: danlatCategory},
+        {title: 'đồ gốm', categoryImg: gomCategory, pathTo: '/shop'},
+        {title: 'đồ thổ cẩm', categoryImg: thocamCategory, pathTo: '/shop'},
+        {title: 'đồ đan lát', categoryImg: danlatCategory, pathTo: '/shop'},
     ]
 
     const [openModal, setOpenModal] = useState(false);
@@ -91,12 +91,14 @@ function Home() {
                 </div>
                 <div className={`${cx('category')} w-100 d-flex flex-row`}>
                     {categoryOptions.map((option) => (
-                    <div className={`${cx('category-option')} col-4`}>
-                        <div>
-                            <img src={option.categoryImg}/>
-                            <p>{option.title}</p>
+                        <div className={`${cx('category-option')} col-4`}>
+                            <div>
+                                <a href={option.pathTo}>
+                                    <img src={option.categoryImg}/>
+                                </a>
+                                <p>{option.title}</p>
+                            </div>
                         </div>
-                    </div>
                     ))}
                 </div>
             </div>
