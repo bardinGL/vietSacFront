@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: process.env.REACT_APP_POSTMAN,
-    timeout: 3000,
+    // baseURL: process.env.REACT_APP_POSTMAN,
+    baseURL: process.env.REACT_APP_VIETSAC,
+    timeout: 30000,
 });
 
 instance.interceptors.response.use(

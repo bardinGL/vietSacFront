@@ -6,9 +6,9 @@ const cx = classNames.bind(styles);
 function RelatedProductItem({product}) {
     return (
         <div className={`${cx('wrapper')}`}>
-            <a href={`/shop/${product.productName}`}>
+            <a href={`/shop/${product.id}`}>
                 <div className={`${cx('section-product-img')}`}>
-                    <img src={product.productImg}/>
+                    <img src={product.image}/>
                 </div>
             </a>
         </div>

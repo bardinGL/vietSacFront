@@ -80,7 +80,7 @@ function Header({isTransparent}) {
                 <img src={closeIcon} className={`${cx('navigation-close-btn')}`} onClick={handleCloseNav}/>
                 <div className={`${cx('navigation-options')}`}>
                     {navigationOption.map((option, index) => 
-                    <div className={`${index % 2 !== 0 ? 'ps-5' : ''}`}>
+                    <div className={`${index % 2 !== 0 ? 'ps-5' : ''}`} key={index}>
                         <a href={option.link} className={`${option.current ? cx('chosen-option') : ''} ${cx('nav-option')} w-auto`}>{option.title}</a>
                     </div>)}
                 </div>

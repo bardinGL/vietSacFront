@@ -6,42 +6,53 @@ import classNames from 'classnames/bind';
 import styles from './index.module.css';
 
 import logo from '../../assets/logo/logo.png'
-import chen from '../../assets/images/product/chen.png'
-import ghe from '../../assets/images/product/ghe.png'
-import vi from '../../assets/images/product/vi.png'
-import tui from '../../assets/images/product/tui.png'
+import { floor } from 'lodash';
 
 import iconClose from '../../assets/icon/closeRed.svg'
 import { useState, useEffect } from 'react';
 import TabsGallery from "../../component/TabsGallery";
 import ProductModal from "../../component/ProductModal";
 import RelatedProductItem from "../../component/RelatedProductItem";
-import { getProductDetailAPI } from "../../api/shop";
+import { useLocation } from "react-router-dom";
+import { getProductDetailAPI, getProductsAllAPI, getRelatedProductsAPI } from "../../api/shop";
+import { filter } from "lodash";
 
 const cx = classNames.bind(styles);
 
 function ProductDetail() {
+    const productID = useLocation().pathname.split('/').at(-1);
+
     const [product, setProduct] = useState({});
+    const [relatedProducts, setRelatedProducts] = useState([]);
 
     const fetchData = async() => {
-        setProduct(await getProductDetailAPI());
+        await getProductDetailAPI(productID)
+        .then(async res => {
+            setProduct(res.data);
+        })
+        await getProductsAllAPI()
+        .then(async res => {
+            const filteredRelatedProducts = res.data.filter(function(filterProduct) {
+                return filterProduct.id != product.id && filterProduct.category_id == product.category_id;
+            })
+            if(filteredRelatedProducts.length > 0) {
+                setRelatedProducts(filteredRelatedProducts);
+            }
+            else {
+                setRelatedProducts(res.data);
+            }
+        
+        })
     }
 
     useEffect(() => {
         fetchData();
     }, [])
 
-    console.log(product.productImgs);
-    const relatedProducts = [
-        {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
-        {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
-        {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
-        {productName: 'Túi', productImg: tui, price: '325.000', discount: '50'},
-        {productName: 'Chén', productImg: chen, price: '325.000', discount: '0'},
-        {productName: 'Ghế', productImg: ghe, price: '325.000', discount: '50'},
-        {productName: 'Ví', productImg: vi, price: '325.000', discount: '50'},
-        {productName: 'Túi', productImg: tui, price: '325.000', discount: '50'},
-    ]
+    const numberWithCommas = (x) => {
+
+        return floor(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
 
     const [openModal, setOpenModal] = useState(false);
  
@@ -81,10 +92,10 @@ function ProductDetail() {
     return (
         <div className={`${cx('wrapper')}`}>
             <div className={`${cx('section-product-detail')} d-flex justify-content-around`}>
-                <TabsGallery imgGalleries={product.productImgs || [logo]}/>
+                <TabsGallery imgGalleries={product.productImgs || [product.image] || [logo]}/>
                 <div className={`${cx('product-detail')}`}>
                     <div className={`${cx('product-title')}`}>
-                        <h1>{product.productName}</h1>
+                        <h1>{product.name}</h1>
                     </div>
                     <div className={`${cx('small-red-box')}`}></div>
                     <div className={`${cx('product-tabs')} d-flex justify-content-between mt-4`}>
@@ -107,7 +118,7 @@ function ProductDetail() {
                         </div>
                     </div>
                     <div className={`${cx('product-price')}`}>
-                        <h2>{product.price} VND</h2>
+                        <h2>{numberWithCommas((parseInt(product.price) * (1 - parseFloat(product.discount)/100)))} VND</h2>
                     </div>
                     <div className={`${cx('product-quant')} my-4`}>
                         <label>Số lượng</label>
@@ -126,7 +137,7 @@ function ProductDetail() {
                 </div>
                 <div className={`${cx('big-red-box')} mx-auto mb-5`}></div>
                 <Carousel breakPoints={breakPoints}>
-                    {relatedProducts.map((product) => (<RelatedProductItem product={product}/>))}
+                    {relatedProducts.map((product, index) => (<RelatedProductItem product={product} key={index}/>))}
                 </Carousel>
             </div>
             <Dialog  

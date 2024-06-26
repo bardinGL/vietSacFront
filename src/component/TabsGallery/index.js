@@ -22,8 +22,8 @@ function TabsGallery({imgGalleries}) {
         <div className={`${cx('wrapper')}`}>
             <div className={`${cx('product-image')} d-flex flex-row`}>
                 <div className={`${cx('img-list')} d-flex flex-column`}>
-                    {imgGalleries.map((img) => (
-                        <div className={`${cx('img-option')}`}>
+                    {imgGalleries.map((img, index) => (
+                        <div className={`${cx('img-option')}`} key={index}>
                             <img src={img} onClick={handleImgChange}/>
                         </div>
                     ))}

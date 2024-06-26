@@ -12,7 +12,7 @@ import classNames from 'classnames/bind';
 import styles from './index.module.css';
 import { useEffect, useState } from 'react';
 import { floor } from 'lodash';
-import { getUserCartAPI } from '../../../../api/site';
+// import { getUserCartAPI } from '../../../../api/site';
 
 const cx = classNames.bind(styles);
 
@@ -30,13 +30,13 @@ function Cart() {
 
     const [cart, setCart] = useState([]);
 
-    const fetchData = async() => {
-        setCart(await getUserCartAPI());
-    }
+    // const fetchData = async() => {
+    //     setCart(await getUserCartAPI());
+    // }
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+    // useEffect(() => {
+    //     fetchData();
+    // }, [])
 
     const CartProductItem = ({product}) => {
         return (

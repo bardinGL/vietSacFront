@@ -47,4 +47,5 @@
 
 .img-preview img {
     min-width: 500px;
+    max-width: 500px;
 }

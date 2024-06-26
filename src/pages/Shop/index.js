@@ -14,16 +14,26 @@ import chen from '../../assets/images/product/chen.png'
 import ghe from '../../assets/images/product/ghe.png'
 import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
-import { getProductsAllAPI } from '../../api/shop';
+import { getProductsAllAPI, getCategoryAllAPI } from '../../api/shop';
 import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Shop() {
     const [productsAll, setProductsAll] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     const fetchData = async() => {
-        setProductsAll(await getProductsAllAPI());
+        await getProductsAllAPI()
+        .then(async res => {
+            setProductsAll(res.data);
+            setFilteredProducts(res.data);
+            return await getCategoryAllAPI();
+        })
+        .then(async res => {
+            setCategories(res.data);
+        })
     }
 
     useEffect(() => {
@@ -32,21 +42,9 @@ function Shop() {
 
     const filterOptions = [
         {
-            filterTitle: 'Mục đích',
-            options: [
-                'Dùng hàng ngày',
-                'Dùng trang trí'
-            ]
+            filterTitle: 'Mặt hàng',
+            options: categories.map(category => category.category_name )
         },
-        {
-            filterTitle: 'Tên thương hiệu',
-            options: [
-                'Gốm Chu Đậu',
-                'Gốm Bát Tràng',
-                'Gốm Bàu Trúc',
-                'Gốm Biên Hòa'
-            ]
-        }
     ];
 
     const initalFilter = filterOptions.map((filter) => filter.filterTitle).reduce(
@@ -67,6 +65,9 @@ function Shop() {
             ...filter,
             [title]: e.target.innerText
         });
+
+        const filterID = categories.find((category) => category.category_name === e.target.innerText).id;
+        setFilteredProducts(productsAll.filter(filteredProduct => filteredProduct.category_id === filterID));
     }
 
     return (
@@ -104,7 +105,7 @@ function Shop() {
                     
                 </div>
                 <div className={`${cx('product-container')} d-flex flex-wrap`}>
-                    {productsAll.map((product) => (<ProductItem product={product}/>))}
+                    {filteredProducts.map((product) => (<ProductItem product={product}/>))}
                 </div>
             </div>
         </div>
