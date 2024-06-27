@@ -5,7 +5,6 @@ import Checkout from "./Checkout";
 import Overview from "./Overview"
 
 import './index.module.css'
-import { getUserInfoAPI } from "../../api/site";
 
 const checkoutInitialState = {
   email: "",
@@ -35,13 +34,13 @@ const renderStep = (step) => {
 const CheckoutPage = () => {
     const [userInfo, setUserInfo] = useState({});
 
-    const fetchData = async() => {
-        setUserInfo(await getUserInfoAPI());
-    }
+    // const fetchData = async() => {
+    //     setUserInfo(await getUserInfoAPI());
+    // }
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+    // useEffect(() => {
+    //     fetchData();
+    // }, [])
 
     checkoutInitialState.email = userInfo.email;
     checkoutInitialState.firstName = userInfo.firstName;

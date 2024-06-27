@@ -13,15 +13,18 @@ import axiosSite from "./axiosSite.js";
 //     return axiosSite.get(`${END_POINT.PRODUCTS_DETAIL}`);
 // }
 
+const API_VERSION = "v1"
+
 const END_POINT = {
-    PRODUCTS_ALL: "Product",
-    CATEGORY_ALL: "Category",
-    RELATED_PRODUCTS: "Product/category",
+    PRODUCTS_ALL: `${API_VERSION}/Product`,
+    CATEGORY_ALL: `${API_VERSION}/Category`,
+    RELATED_PRODUCTS: `${API_VERSION}/Product/category`,
 }
 
 export const getProductsAllAPI = () => {
     // return axiosSite.get(`${END_POINT.HOME}`)
     return axiosSite.get(`${END_POINT.PRODUCTS_ALL}`);
+    // { headers: {"Authorization" : `Bearer ${tokenStr}`} }
 }
 
 export const getProductDetailAPI = (productID) => {

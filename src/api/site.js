@@ -4,20 +4,12 @@ import axiosSite from "./axiosSite.js";
 //     HOME: "home"
 // }
 
+const API_AUTH = "Auth";
+
 const END_POINT = {
-    USER_INFO: "get-user-info",
-    HOT_DEALS: "get-hot-deals",
-    USER_CART: "get-user-cart"
-}
-export const getUserInfoAPI = () => {
-    // return axiosSite.get(`${END_POINT.HOME}`)
-    return axiosSite.get(`${END_POINT.USER_INFO}`);
+    SIGNUP_USER: `${API_AUTH}/SignUpUser`
 }
 
-export const getProductsHotDealsAPI = () => {
-    return axiosSite.get(`${END_POINT.HOT_DEALS}`);
-}
-
-export const getUserCartAPI = () => {
-    return axiosSite.get(`${END_POINT.USER_CART}`);
+export const postSignUpUser = (userInfo) => {
+    return axiosSite.post(`${END_POINT.SIGNUP_USER}`, userInfo);
 }

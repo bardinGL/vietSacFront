@@ -24,14 +24,8 @@ import gallery11 from '../../assets/images/gallery/gallery11';
 import gallery12 from '../../assets/images/gallery/gallery12';
 import gallery13 from '../../assets/images/gallery/gallery13';
 
-import chen from '../../assets/images/product/chen.png'
-import ghe from '../../assets/images/product/ghe.png'
-import vi from '../../assets/images/product/vi.png'
-import tui from '../../assets/images/product/tui.png'
-
 import danDo from '../../assets/images/galleryContent/danDo.png'
 import { useEffect, useState } from 'react';
-import { getProductsHotDealsAPI } from '../../api/site';
 import { Dialog } from '@material-ui/core';
 import GalleryModal from '../../component/GalleryModal';
 
@@ -51,15 +45,15 @@ const Mask = ({ gallery,handleOpenModal }) => {
 }
 
 function Home() {
-    const fetchData = async() => {
-        setProductsHotDeal(await getProductsHotDealsAPI());
-    }
-
     const [productsHotDeal, setProductsHotDeal] = useState([]);
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+    // useEffect(() => {
+    //     fetchData();
+    // }, [])
+
+    // const fetchData = async() => {
+    //     setProductsHotDeal(await getProductsHotDealsAPI());
+    // }
     
     const categoryOptions = [
         {title: 'đồ gốm', categoryImg: gomCategory, pathTo: '/shop'},

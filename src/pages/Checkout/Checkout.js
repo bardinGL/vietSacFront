@@ -9,7 +9,6 @@ import { Formik } from "formik";
 import { Button, Radio, Space } from "antd";
 import { Input } from "formik-antd";
 import { floor } from 'lodash';
-import { getUserCartAPI, getUserInfoAPI } from '../../api/site';
 
 const cx = classNames.bind(styles);
 
@@ -44,14 +43,14 @@ function Checkout() {
     const [cart, setCart] = useState([]);
     const [userInfo, setUserInfo] = useState({});
 
-    const fetchData = async() => {
-        setCart(await getUserCartAPI());
-        setUserInfo(await getUserInfoAPI());
-    }
+    // const fetchData = async() => {
+    //     setCart(await getUserCartAPI());
+    //     setUserInfo(await getUserInfoAPI());
+    // }
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+    // useEffect(() => {
+    //     fetchData();
+    // }, [])
 
     const shippingOptions = [
         {

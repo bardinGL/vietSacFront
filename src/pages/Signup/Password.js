@@ -58,7 +58,7 @@ const Password = () => {
                                 Quay lại
                             </Button>
                             <Button className={`btn-small prim-btn ${cx('btn-next')} position-absolute`} onClick={handleSubmit}>
-                                Tiếp theo
+                                Tạo tài khoản
                             </Button>
                         </div>
                     </div>

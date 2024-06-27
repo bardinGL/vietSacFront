@@ -4,9 +4,10 @@ import Name from "./Name";
 import Info from "./Info";
 import Email from "./Email";
 import Password from "./Password";
-import Review from "./Review";
 
 import './index.module.css'
+import { postSignUpUser } from "../../api/site";
+import { useNavigate } from "react-router-dom";
 
 const nameInitialState = {
   firstName: "",
@@ -38,8 +39,6 @@ const renderStep = (step) => {
       return <Email />;
     case 3:
       return <Password />;
-    case 4:
-      return <Review />;
     default:
       return null;
   }
@@ -52,13 +51,37 @@ const Signup = () => {
     const [password, setPassword] = useState(passwordInitialState);
     const [currentStep, setCurrentStep] = useState(0);
 
+    const navigate = useNavigate();
+
+    async function createNewUser() {
+      const userInfo = {
+        'username': email.email,
+        'password': password.password,
+        'email': email.email,
+        'role_id': '1',
+        'phone': info.yearDOB,
+        'address': info.gender
+      }
+      await postSignUpUser(userInfo)
+        .then(res => {
+          if(res.statusCode !== 200) {
+            alert(res.messageError);
+          }else {
+            alert("Create new account successfully!!!");
+            navigate('/login');
+          }
+        })
+    }
+
     const next = () => {
-        if (currentStep === 4) {
-          setCurrentStep(0);
-          setName(nameInitialState);
-          setInfo(infoInitialState);
-          setEmail(emailInitialState);
-          setPassword(passwordInitialState);
+        if (currentStep === 3) {
+          
+          createNewUser();
+          // setCurrentStep(0);
+          // setName(nameInitialState);
+          // setInfo(infoInitialState);
+          // setEmail(emailInitialState);
+          // setPassword(passwordInitialState);
           return;
         }
         setCurrentStep(currentStep + 1);

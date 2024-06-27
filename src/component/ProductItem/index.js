@@ -28,7 +28,7 @@ function ProductItem({product}) {
                 <div className={`${cx('product-price')}`}>
                     {/* <p className={`${cx('price-after')}`}>{product.discount === '0' ? product.price : product.priceAfter} VND</p> */}
                     <p className={`${cx('price-after')}`}>{product.priceAfter} VND</p>
-                    {product.discount === '0' || product.discount === 0 ? '': (<p className={`${cx('price-before')}`}>{product.price} VND</p>)}
+                    {product.discount === '0' || product.discount === 0 ? '': (<p className={`${cx('price-before')}`}>{numberWithCommas(product.price)} VND</p>)}
                     
                 </div>
             </div>

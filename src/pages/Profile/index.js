@@ -12,7 +12,6 @@ import { Formik } from "formik";
 import { Button } from "antd";
 import { Input } from "formik-antd";
 import { floor } from 'lodash';
-import { getUserInfoAPI } from '../../api/site';
 
 const cx = classNames.bind(styles);
 
@@ -41,13 +40,13 @@ const CartProductItem = ({product}) => {
 function Profile() {
     const [userInfo, setUserInfo] = useState({});
 
-    const fetchData = async() => {
-        setUserInfo(await getUserInfoAPI());
-    }
+    // const fetchData = async() => {
+    //     setUserInfo(await getUserInfoAPI());
+    // }
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+    // useEffect(() => {
+    //     fetchData();
+    // }, [])
 
     const cityList = [
         {
