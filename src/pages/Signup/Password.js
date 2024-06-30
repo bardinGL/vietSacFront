@@ -12,22 +12,31 @@ import logo from '../../assets/logo/logo.png'
 const cx = classNames.bind(styles);
 
 const Password = () => {
-  const { password, setPassword, next, prev } = useContext(MultiStepFormContext);
+  const { userInfo, setUserInfo, next, prev } = useContext(MultiStepFormContext);
+
+  const passwordInitialState = {
+    "password": userInfo.password
+  }
+
   return (
     <Formik
-      initialValues={password}
+      initialValues={passwordInitialState}
       onSubmit={(values) => {
         const errors = {};
-        if(values.password === values.passwordCheck) {
-            setPassword(values);
-            next();
-        }
+        next(true);
       }}
       validate={(values) => {
         const errors = {};
         if (!values.password) errors.password = "Password is required";
         if (!values.passwordCheck) errors.passwordCheck = "Please enter your password again";
         if(values.password !== values.passwordCheck) errors.passwordCheck = "Passwords are not matched";
+        if(values.password === values.passwordCheck) {
+          setUserInfo({
+            ...userInfo,
+            "password": values.password
+          });
+          
+      }
         return errors;
       }}
     >

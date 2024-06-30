@@ -1,0 +1,15 @@
+.wrapper {
+    width: 100vw;
+    height: auto;
+}
+
+.error-title {
+    color: #9E1D26;
+    font-size: 100px;
+}
+
+.error-des {
+    color: #264234;
+    font-size: 25px;
+    margin-bottom: 0;
+}

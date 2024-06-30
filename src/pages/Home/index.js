@@ -39,7 +39,7 @@ const Mask = ({ gallery,handleOpenModal }) => {
     return (
         <div className={`${cx('gallery-img-wrapper')} bg-image position-absolute`} style={gallery.location} onClick={handleOpenModal}>
             <img src={gallery.galleryImg} style={gallery.mask} />
-            <div class="mask" style={gallery.mask}></div>
+            <div className="mask" style={gallery.mask}></div>
         </div>
     );
 }
@@ -84,8 +84,8 @@ function Home() {
                     <h1>DANH MỤC SẢN PHẨM</h1>
                 </div>
                 <div className={`${cx('category')} w-100 d-flex flex-row`}>
-                    {categoryOptions.map((option) => (
-                        <div className={`${cx('category-option')} col-4`}>
+                    {categoryOptions.map((option, index) => (
+                        <div className={`${cx('category-option')} col-4`} key={index}>
                             <div>
                                 <a href={option.pathTo}>
                                     <img src={option.categoryImg}/>

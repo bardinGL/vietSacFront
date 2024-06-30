@@ -7,11 +7,14 @@ import chen from '../../assets/images/product/chen.png'
 import ProductItem from '../../component/ProductItem';
 
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Formik } from "formik";
 import { Button } from "antd";
 import { Input } from "formik-antd";
 import { floor } from 'lodash';
+import { getUserInfo } from '../../api/site';
+import { useAuth } from '../../provider';
 
 const cx = classNames.bind(styles);
 
@@ -38,15 +41,25 @@ const CartProductItem = ({product}) => {
 }
 
 function Profile() {
+    const navigate = useNavigate();
+
     const [userInfo, setUserInfo] = useState({});
+    const { userID } = useAuth();
+    console.log(userInfo);
 
-    // const fetchData = async() => {
-    //     setUserInfo(await getUserInfoAPI());
-    // }
+    const fetchData = async() => {
+        await getUserInfo(userID)
+            .then((res) => {
+                setUserInfo(res.data);
+            })
+            .catch(res => {
+                navigate('/error');
+            })
+    }
 
-    // useEffect(() => {
-    //     fetchData();
-    // }, [])
+    useEffect(() => {
+        fetchData();
+    }, [])
 
     const cityList = [
         {

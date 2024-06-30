@@ -18,13 +18,26 @@ const Info = () => {
     { value: "another", text: "Khác" }
   ];
 
-  const { info, setInfo, next, prev } = useContext(MultiStepFormContext);
+  const { userInfo, setUserInfo, next, prev } = useContext(MultiStepFormContext);
+
+  const InfoInitialValues = {
+    'dayDOB': userInfo.dayDOB,
+    'monthDOB': userInfo.monthDOB,
+    'yearDOB': userInfo.yearDOB,
+    'gender': userInfo.gender
+  };
   return (
     <Formik
-      initialValues={info}
+      initialValues={InfoInitialValues}
       onSubmit={(values) => {
         values.gender = document.querySelector('select[name="gender"]').value;
-        setInfo(values);
+        setUserInfo({
+          ...userInfo, 
+          'dayDOB': values.dayDOB,
+          'monthDOB': values.monthDOB,
+          'yearDOB': values.yearDOB,
+          'gender': values.gender
+        });
         next();
       }}
       validate={(values) => {

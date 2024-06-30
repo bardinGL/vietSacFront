@@ -15,6 +15,7 @@ import Profile from "../pages/Profile";
 import FixedHeaderLayout from "../component/Layout/FixedHeaderLayout";
 import Checkout from "../pages/Checkout";
 import Thankyou from "../pages/Thankyou";
+import Error from "../pages/Error";
 
 // const publicRoutes = [
 //     { path: '/', component: Home, name: 'Home', layout: TransHeaderLayout},
@@ -82,6 +83,13 @@ const Routes = () => {
         element: 
         <NoFooterLayout>
           <ProductDetail/>
+        </NoFooterLayout>
+      },
+      {
+        path: "/error",
+        element: 
+        <NoFooterLayout>
+          <Error/>
         </NoFooterLayout>
       },
     ];

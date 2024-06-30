@@ -52,27 +52,41 @@ function Header({isTransparent}) {
     }
 
     return (
-    <div className={`${cx('header-cover')} ${!isTransparent ? cx('intransparent-header') : ''}`}>
+    <div className={`${cx('header-cover')} ${!isTransparent ? `${cx('intransparent-header')}` : 'position-absolute'}`}>
         <div className={`${cx('wrapper')} d-flex justify-content-between align-items-center`}>
             <div>
                 <h5><img src={opNavIcon} alt="Navigation" className={cx('navigation-icon')} onClick={handleOpenNav}/></h5>
             </div>
-            <div style={{paddingLeft: '218px'}}>
+            <div className={`${cx('logo-container')}`}>
                 <a href='/home' className={`d-flex justify-content-center flex-column`} style={{textDecoration: 'none'}}>
                     <img className={`${cx('header-logo')}`} src={logoSmall} alt="Navigation"/>
                     <p className={`${cx('header-logo-text')}`}>Việt Sắc</p>
                 </a>
             </div>
-            <div className={`${cx('header-user-section')} d-flex justify-content-center align-items-center flex-row`}>
-                <a href='/user'>
-                    <div className='d-flex justify-content-center align-items-center flex-row'>
-                        <p className={`${cx('user-title')} m-0 me-3`}>Say hi to us</p>
-                        <img className={`${cx('header-icon')}`} src={userIcon} alt="User"/>
+            {
+                !isTransparent ? (
+                    <div className={`${cx('header-user-section')} d-flex justify-content-center align-items-center flex-row`}>
+                        <a href='/user'>
+                            <div className='d-flex justify-content-center align-items-center flex-row'>
+                                <p className={`${cx('user-title')} m-0 me-3`}>Say hi to us</p>
+                                <img className={`${cx('header-icon')}`} src={userIcon} alt="User"/>
+                            </div>
+                        </a>
+                        <img className={`mx-4`} src={line} alt="Line"/>
+                        <Cart/>
                     </div>
-                </a>
-                <img className={`mx-4`} src={line} alt="Line"/>
-                <Cart/>
-            </div>
+                )
+                :(
+                    <div className={`${cx('header-user-section')} d-flex justify-content-center align-items-center flex-row`}>
+                        <a href='/user'>
+                            <div className='d-flex justify-content-center align-items-center flex-row'>
+                                <p className={`${cx('user-title')} m-0 me-3`}>Say hi to us</p>
+                                <img className={`${cx('header-icon')}`} src={userIcon} alt="User"/>
+                            </div>
+                        </a>
+                    </div>
+                )
+            }
         </div>
         <div className={cx('navigation')}>
             <div className={`${cx('wrapper-nav')}`}>

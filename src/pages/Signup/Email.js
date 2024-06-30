@@ -12,12 +12,20 @@ import logo from '../../assets/logo/logo.png'
 const cx = classNames.bind(styles);
 
 const Email = () => {
-  const { email, setEmail, next, prev } = useContext(MultiStepFormContext);
+  const { userInfo, setUserInfo, next, prev } = useContext(MultiStepFormContext);
+
+  const emailInitialValues = {
+    'email': userInfo.email
+  };
+
   return (
     <Formik
-      initialValues={email}
+      initialValues={emailInitialValues}
       onSubmit={(values) => {
-        setEmail(values);
+        setUserInfo({
+          ...userInfo,
+          'email': values.email
+        });
         next();
       }}
       validate={(values) => {

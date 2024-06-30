@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react';
 import TabsGallery from "../../component/TabsGallery";
 import ProductModal from "../../component/ProductModal";
 import RelatedProductItem from "../../component/RelatedProductItem";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getProductDetailAPI, getProductsAllAPI, getRelatedProductsAPI } from "../../api/shop";
 import { filter } from "lodash";
 
@@ -25,6 +25,7 @@ function ProductDetail() {
     const [product, setProduct] = useState({});
     const [relatedProducts, setRelatedProducts] = useState([]);
 
+    const navigate = useNavigate();
     const fetchData = async() => {
         await getProductDetailAPI(productID)
         .then(async res => {
@@ -41,7 +42,9 @@ function ProductDetail() {
             else {
                 setRelatedProducts(res.data);
             }
-        
+        })
+        .catch(res => {
+            navigate('/error');
         })
     }
 

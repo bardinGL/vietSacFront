@@ -9,25 +9,14 @@ import './index.module.css'
 import { postSignUpUser } from "../../api/site";
 import { useNavigate } from "react-router-dom";
 
-const nameInitialState = {
-  firstName: "",
-  lastName: ""
-};
-
-const emailInitialState = {
-  email: ""
-};
-
-const infoInitialState = {
-  dayDOB: "",
-  monthDOB: "",
-  yearDOB: "",
-  gender: ""
-};
-
-const passwordInitialState = {
-  password: ""
-};
+const userInfoIntitialState = {
+  'username': '',
+  'password': '',
+  'email': '',
+  'role_id': '1',
+  'phone': '',
+  'address': ''
+}
 
 const renderStep = (step) => {
   switch (step) {
@@ -45,24 +34,21 @@ const renderStep = (step) => {
 };
 
 const Signup = () => {
-    const [name, setName] = useState(nameInitialState);
-    const [info, setInfo] = useState(infoInitialState);
-    const [email, setEmail] = useState(emailInitialState);
-    const [password, setPassword] = useState(passwordInitialState);
+    const [userInfo, setUserInfo] = useState(userInfoIntitialState);
     const [currentStep, setCurrentStep] = useState(0);
 
     const navigate = useNavigate();
 
     async function createNewUser() {
-      const userInfo = {
-        'username': email.email,
-        'password': password.password,
-        'email': email.email,
+      const sendUserInfo = {
+        'username': userInfo.email,
+        'password': userInfo.password,
+        'email': userInfo.email,
         'role_id': '1',
-        'phone': info.yearDOB,
-        'address': info.gender
+        'phone': userInfo.yearDOB,
+        'address': userInfo.gender
       }
-      await postSignUpUser(userInfo)
+      await postSignUpUser(sendUserInfo)
         .then(res => {
           if(res.statusCode !== 200) {
             alert(res.messageError);
@@ -71,17 +57,16 @@ const Signup = () => {
             navigate('/login');
           }
         })
+        .catch(res => {
+          navigate('/error');
+        })
     }
 
-    const next = () => {
-        if (currentStep === 3) {
+    const next = (endOfForm = false) => {
+      // if (currentStep === 3) {
+        if (endOfForm) {
+          createNewUser()
           
-          createNewUser();
-          // setCurrentStep(0);
-          // setName(nameInitialState);
-          // setInfo(infoInitialState);
-          // setEmail(emailInitialState);
-          // setPassword(passwordInitialState);
           return;
         }
         setCurrentStep(currentStep + 1);
@@ -89,7 +74,7 @@ const Signup = () => {
 
     const prev = () => setCurrentStep(currentStep - 1);
     return (
-      <Provider value={{ name, setName, next, prev, info, setInfo, email, setEmail, password, setPassword }}>
+      <Provider value={{ userInfo, setUserInfo, next, prev}}>
         <main>{renderStep(currentStep)}</main>
       </Provider>
     )

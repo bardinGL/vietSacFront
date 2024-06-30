@@ -16,6 +16,7 @@ import vi from '../../assets/images/product/vi.png'
 import tui from '../../assets/images/product/tui.png'
 import { getProductsAllAPI, getCategoryAllAPI } from '../../api/shop';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -24,6 +25,7 @@ function Shop() {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [categories, setCategories] = useState([]);
 
+    const navigate = useNavigate();
     const fetchData = async() => {
         await getProductsAllAPI()
         .then(async res => {
@@ -33,6 +35,9 @@ function Shop() {
         })
         .then(async res => {
             setCategories(res.data);
+        })
+        .catch(res => {
+            navigate('/error');
         })
     }
 

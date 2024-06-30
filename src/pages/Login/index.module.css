@@ -9,6 +9,7 @@
     width: 1230px;
     height: 560px;
     padding: 80px;
+    position: relative;
 
     background-color: #FFD467;
     border-radius: 50px;
@@ -79,15 +80,27 @@ input:-webkit-autofill:active {
 }
 
 .signup-option {
+    width: auto;
     /* padding-top: 40px; */
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+
+.signup-option a {
     text-decoration: none;
     color: #000000;
     font-size: 20px;
     font-weight: 400;
     font-family: medium-font !important;
-    text-align: end;
 }
 
 .signup-option:hover {
     color: #000000;
+}
+
+.error-feedback {
+    font-size: 18px;
+    font-weight: 450;
+    color: red;
 }
